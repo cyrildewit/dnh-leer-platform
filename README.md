@@ -1,23 +1,10 @@
 # Leer Platform - Scriptie informatica 2020
 
-## Build Setup
+> Online courses platform
 
-```bash
-# install dependencies
-$ npm install
+## Overview
 
-# serve with hot reload at localhost:3000
-$ npm run dev
-
-# build for production and launch server
-$ npm run build
-$ npm run start
-
-# generate static project
-$ npm run generate
-```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+The back-end is built in Laravel 7 and can be found in the `server` directory. The font-end is built in Nuxt.js and can be found in the `client` directory.
 
 ## Credits
 
