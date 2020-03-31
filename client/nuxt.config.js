@@ -100,16 +100,16 @@ export default {
         _scheme: 'local',
         endpoints: {
           login: {
-            url: 'http://api.dnh-leer-platform.test/v1/auth/login',
+            url: 'http://dnh-leer-platform.test/api/v1/auth/login',
             method: 'post',
             propertyName: 'token',
           },
           logout: {
-            url: 'http://api.dnh-leer-platform.test/v1/auth/logout',
+            url: 'http://dnh-leer-platform.test/api/v1/auth/logout',
             method: 'post',
           },
           user: {
-            url: 'http://api.dnh-leer-platform.test/v1/auth/user',
+            url: 'http://dnh-leer-platform.test/api/v1/auth/user',
             method: 'get',
             propertyName: 'user',
           },

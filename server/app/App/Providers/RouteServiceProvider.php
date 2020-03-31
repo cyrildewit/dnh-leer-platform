@@ -47,7 +47,7 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected function mapApiRoutes()
     {
-        Route::domain('api.dnh-leer-platform.test')
+        Route::prefix('api')
             ->middleware('api')
             ->group(base_path('routes/api.php'));
     }
