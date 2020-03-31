@@ -4,3 +4,9 @@
     <p><a href="/login">Login</a></p>
   </div>
 </template>
+
+<script>
+export default {
+  layout: 'BrandDefault',
+}
+</script>
