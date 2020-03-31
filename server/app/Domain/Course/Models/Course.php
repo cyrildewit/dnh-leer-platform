@@ -11,6 +11,11 @@ class Course extends Model
 {
     protected $table = 'courses';
 
+    protected $casts = [
+        'learning_points' => 'array',
+        'target_audience' => 'array',
+    ];
+
     public function authors(): BelongsToMany
     {
         return $this->belongsToMany(User::class, 'course_author', 'course_id', 'user_id')
