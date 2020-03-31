@@ -1,6 +1,6 @@
 
 export default {
-  mode: 'spa',
+  mode: 'universal',
 
   /*
   ** Headers of the page
@@ -49,6 +49,7 @@ export default {
   modules: [
     'nuxt-i18n',
     '@nuxtjs/axios',
+    '@nuxtjs/pwa',
     '@nuxtjs/dotenv',
     '@nuxtjs/auth',
     'nuxt-validate',
@@ -91,6 +92,30 @@ export default {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
+  },
+
+  auth: {
+    strategies: {
+      userApi: {
+        _scheme: 'local',
+        endpoints: {
+          login: {
+            url: 'http://api.dnh-leer-platform.test/v1/auth/login',
+            method: 'post',
+            propertyName: 'token',
+          },
+          logout: {
+            url: 'http://api.dnh-leer-platform.test/v1/auth/logout',
+            method: 'post',
+          },
+          user: {
+            url: 'http://api.dnh-leer-platform.test/v1/auth/user',
+            method: 'get',
+            propertyName: 'user',
+          },
+        },
+      },
+    },
   },
 
   nuxtValidate: {
