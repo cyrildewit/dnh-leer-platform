@@ -9,11 +9,10 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Validation\ValidationException;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Illuminate\Foundation\Validation\ValidatesRequests;
 
 final class LoginController extends Controller
 {
-    use ValidatesRequests, AuthenticatesUsers;
+    use AuthenticatesUsers;
 
     public function __construct()
     {
