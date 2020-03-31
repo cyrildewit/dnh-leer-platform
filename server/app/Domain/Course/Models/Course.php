@@ -1,6 +1,6 @@
 <?php
 
-namespace Domain\User\Models;
+namespace Domain\Course\Models;
 
 use Domain\Model;
 use Domain\User\Models\User;
