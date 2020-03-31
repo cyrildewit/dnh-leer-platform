@@ -1,11 +1,10 @@
 <?php
 
-namespace App\Api\Controllers\Auth;
+namespace App\Api\User\Controllers;
 
 use Support\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-// use App\Exceptions\VerifyEmailException;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Validation\ValidationException;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
