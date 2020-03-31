@@ -1,12 +1,7 @@
 {
-    "name": "laravel/laravel",
+    "name": "cyrildewit/dnh-leer-platform",
     "type": "project",
-    "description": "The Laravel Framework.",
-    "keywords": [
-        "framework",
-        "laravel"
-    ],
-    "license": "MIT",
+    "description": "Source code for dnh-leer-platform.",
     "require": {
         "php": "^7.2.5",
         "fideloper/proxy": "^4.2",
@@ -34,7 +29,9 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "app/"
+            "App\\": "app/App/",
+            "Domain\\": "app/Domain/",
+            "Support\\": "app/Support/"
         },
         "classmap": [
             "database/seeds",
