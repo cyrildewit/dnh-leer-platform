@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use App\Api\User\Resources\User as UserResource;
 
-class UserController
+final class UserController
 {
     public function authenticated()
     {
