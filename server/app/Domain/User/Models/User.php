@@ -1,6 +1,6 @@
 <?php
 
-namespace Domain\Users\Models;
+namespace Domain\User\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
