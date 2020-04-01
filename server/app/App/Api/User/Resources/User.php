@@ -19,6 +19,7 @@ class User extends JsonResource
             'name' => $this->name,
             'email' => $this->email,
             'username' => $this->username,
+            'avatar' => optional($this->getMedia('avatars')->first())->getUrl('thumb'),
             'email_verified_at' => $this->email_verified_at,
             'last_login_at' => $this->last_login_at,
             'created_at' => $this->created_at,
