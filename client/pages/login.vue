@@ -1,19 +1,27 @@
 <template>
-  <div>
-    <h1>Login</h1>
-    <form @submit.prevent="login">
-      <input v-model="form.email" class="bg-gray-300" />
-      <br>
-      <input v-model="form.password" class="bg-gray-300" />
+  <div class="py-8">
+    <div class="container mx-auto px-6">
 
-      <button>Login</button>
-    </form>
+      <div class="w-md mx-auto">
+        <h1>Login</h1>
+
+        <form @submit.prevent="login">
+          <input v-model="form.email" class="bg-gray-300" />
+          <br>
+          <input v-model="form.password" class="bg-gray-300" />
+
+          <button>Login</button>
+        </form>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  // middleware: 'guest',
+  auth: 'guest',
+
+  layout: 'BrandDefault',
 
   data: () => ({
     form: {
