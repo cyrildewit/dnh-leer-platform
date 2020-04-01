@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container px-6">
     <h1>Leer Platorm</h1>
     <p><a href="/login">Login</a></p>
   </div>
