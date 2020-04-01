@@ -37,14 +37,14 @@
             <div class="flex items-center ml-4 md:ml-6">
               <div class="relative ml-3">
                 <div>
-                  <button class="flex items-center max-w-xs font-medium focus:outline-none focus:shadow-solid" aria-label="User menu" aria-haspopup="true">
+                  <button @click="navigation.profile.open = !navigation.profile.open " class="flex items-center max-w-xs font-medium focus:outline-none focus:shadow-solid" aria-label="User menu" aria-haspopup="true">
                     <span class="mr-3">{{ $auth.user.name }}</span>
 
                     <img class="w-10 h-10 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
                   </button>
                 </div>
 
-                <div class="absolute right-0 w-48 mt-2 origin-top-right rounded-md shadow-lg">
+                <div v-show="navigation.profile.open" class="absolute right-0 w-48 mt-2 origin-top-right rounded-md shadow-lg">
                   <div class="py-1 bg-white rounded-md shadow-xs">
                     <a href="#" class="flex flex-row items-center px-4 py-2 text-sm text-gray-700 focus:text-gray-900 hover:text-gray-900 focus:outline-none hover:bg-gray-100 focus:bg-gray-100">
                       <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
@@ -75,6 +75,12 @@
 
 <script>
 export default {
-  //
+  data: () => ({
+    navigation: {
+      profile: {
+        open: false,
+      }
+    },
+  }),
 }
 </script>
