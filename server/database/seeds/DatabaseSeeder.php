@@ -26,6 +26,8 @@ class DatabaseSeeder extends Seeder
         $cyril->addMediaFromUrl('https://avatars1.githubusercontent.com/u/16477999')
             ->toMediaCollection('avatars');
 
+        $this->call(TopicsTableSeeder::class);
+
         Course::create([
             'slug' => 'masterclass-php',
             'title' => 'Masterclass PHP',
