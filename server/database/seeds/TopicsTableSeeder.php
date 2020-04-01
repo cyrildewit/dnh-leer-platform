@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-use Domain\Course\Models\Topic;
+use Domain\Topic\Models\Topic;
 
 class TopicsTableSeeder extends Seeder
 {

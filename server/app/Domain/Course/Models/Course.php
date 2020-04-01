@@ -4,7 +4,7 @@ namespace Domain\Course\Models;
 
 use Domain\Model;
 use Domain\User\Models\User;
-
+use Domain\Topci\Models\Topic;
 use Illuminate\Database\Eloquent\Relationships\BelongsToMany;
 
 class Course extends Model
@@ -24,7 +24,7 @@ class Course extends Model
 
     public function topics()
     {
-        return $this->belongsToMany(\App\Models\Topic::class, 'course_topic', 'course_id', 'topic_id')
+        return $this->belongsToMany(Topic::class, 'course_topic', 'course_id', 'topic_id')
             ->withTimestamps();
     }
 }

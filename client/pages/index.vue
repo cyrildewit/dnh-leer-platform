@@ -15,32 +15,11 @@
           <h2 class="font-medium text-lg">Populaire Onderwerpen</h2>
         </div>
 
-        <div class="flex -mx-2">
-          <div class="w-1/3 px-2">
-            <div class="bg-white border-t border-b shadow">
-              <div class="border-b">
-
-                <div class="flex justify-between px-6 -mb-px">
-                  <h3 class="text-blue-dark py-4 font-normal text-lg">Recent Activity</h3>
-                </div>
-
-              </div>
-            </div>
-          </div>
-          <div class="w-1/3 px-2">
-
-            <div v-for="topic in topics" :key="topic.id">
-              {{ topic.display_name }}
-            </div>
-            <nuxt-link to="/">
-            </nuxt-link>
-
-          </div>
-          <div class="w-1/3 px-2">
-
-
-
-
+        <div class="flex -mx-2" v-for="(topicChunk, key, index) in chunkedTopics" :key="index">
+          <div class="w-1/3 px-2" v-for="(topic) in topicChunk" :key="topic.id">
+            <nuxt-link class="" :to="{ name: 'topics', params: { slug: topic.slug } }">
+             {{ topic.display_name }}
+           </nuxt-link>
           </div>
         </div>
 
@@ -105,6 +84,7 @@
 </template>
 
 <script>
+import _ from 'lodash'
 import { mapGetters } from 'vuex'
 
 export default {
@@ -112,8 +92,11 @@ export default {
 
   computed: {
     ...mapGetters({
-      topics: 'topics/all',
+      topics: 'topics/popular',
     }),
+    chunkedTopics() {
+      return _.chunk(this.topics(6), 3)
+    },
   },
 
   mounted() {
