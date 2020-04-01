@@ -15,13 +15,16 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        User::create([
+        $cyril = User::create([
             'name' => 'Cyril de Wit',
             'email' => 'cyril@example.com',
             'username' => 'cyrildewit',
             'password' => Hash::make('secret'),
             'email_verified_at' => now(),
         ]);
+
+        $cyril->addMediaFromUrl('https://avatars1.githubusercontent.com/u/16477999')
+            ->toMediaCollection('avatars');
 
         Course::create([
             'slug' => 'masterclass-php',
