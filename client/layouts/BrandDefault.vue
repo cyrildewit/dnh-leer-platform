@@ -20,7 +20,7 @@ export default {
 
   head: {
     bodyAttrs: {
-      class: 'bg-gray-100 text-gray-900 leading-normal',
+      class: 'text-gray-900 leading-normal',
     },
   },
 }
