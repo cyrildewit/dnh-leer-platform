@@ -111,7 +111,7 @@ export default {
           user: {
             url: 'http://dnh-leer-platform.test/api/v1/auth/user',
             method: 'get',
-            propertyName: 'user',
+            propertyName: 'data',
           },
         },
       },
