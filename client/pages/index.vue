@@ -117,7 +117,7 @@ export default {
   },
 
   mounted() {
-    // this.$store.
+    this.$store.dispatch('topics/fetchTopics');
   },
 }
 </script>
