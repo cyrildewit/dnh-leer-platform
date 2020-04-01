@@ -28,6 +28,6 @@ Route::prefix('v1')->group(function () {
     });
 
     Route::prefix('views')->group(function () {
-        Route::get('/record-topic-view/{id}', [ViewController::class, 'recordTopicView']);
+        Route::post('/record-topic-view/{id}', [ViewController::class, 'recordTopicView']);
     });
 });
