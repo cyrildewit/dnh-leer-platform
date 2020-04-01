@@ -16,4 +16,8 @@ Route::prefix('v1')->group(function () {
     Route::prefix('courses')->group(function () {
         Route::get('/', [CourseController::class, 'index']);
     });
+
+    Route::prefix('users')->group(function () {
+        Route::put('/{user}', [UserController::class, 'update']);
+    });
 });
