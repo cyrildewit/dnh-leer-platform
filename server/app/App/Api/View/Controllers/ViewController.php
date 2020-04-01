@@ -13,7 +13,7 @@ final class ViewController
     {
         $topic = Topic::findOrFail($topic);
 
-        $visitor = new CustomVisitor();
+        $visitor = app(CustomVisitor::class);
         $visitor->setId($request->input('visitor'));
         $visitor->setIp($request->input('ip_address'));
         $visitor->setHasDoNotTrackHeader($request->boolean('has_do_not_track_header'));

@@ -2,9 +2,9 @@
 
 namespace Support;
 
-use CyrildeWit\EloquentViewable\Contracts\Visitor;
+use CyrildeWit\EloquentViewable\Visitor;
 
-class CustomVisitor implements Visitor
+class CustomVisitor extends Visitor
 {
     protected $id;
     protected $ip;
@@ -26,15 +26,15 @@ class CustomVisitor implements Visitor
         $this->id = $id;
     }
 
-    /**
-     * Get the visitor's IP address.
-     *
-     * @return string|null
-     */
-    public function ip(): string
-    {
-        return $this->ip;
-    }
+    // /**
+    //  * Get the visitor's IP address.
+    //  *
+    //  * @return string|null
+    //  */
+    // public function ip(): string
+    // {
+    //     return $this->ip;
+    // }
 
     public function setIp(string $ip)
     {
