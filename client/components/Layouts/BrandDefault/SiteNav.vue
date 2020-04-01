@@ -40,7 +40,7 @@
                   <button @click="navigation.profile.open = !navigation.profile.open " class="flex items-center max-w-xs font-medium focus:outline-none focus:shadow-solid" aria-label="User menu" aria-haspopup="true">
                     <span class="mr-3">{{ $auth.user.name }}</span>
 
-                    <img class="w-10 h-10 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
+                    <img class="w-10 h-10 rounded-full" :src="$auth.user.avatar" alt="Profile Picture" />
                   </button>
                 </div>
 
