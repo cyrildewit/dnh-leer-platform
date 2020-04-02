@@ -11,6 +11,7 @@ use App\Api\View\Controllers\ViewController;
 Route::prefix('v1')->group(function () {
     Route::prefix('auth')->group(function () {
         Route::post('login', [LoginController::class, 'login']);
+        Route::post('logout', [LoginController::class, 'logout'])->middleware('auth:api');
         // Route::post('register', 'RegisterController@register');
         Route::get('user', [UserController::class, 'authenticated'])->middleware('auth:api');
     });

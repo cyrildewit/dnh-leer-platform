@@ -3,14 +3,14 @@
     <div class="container mx-auto px-6">
 
       <div class="w-md mx-auto">
-        <h1>Login</h1>
+        <h1>{{ $t('loginPage.title') }}</h1>
 
         <form @submit.prevent="login">
           <input v-model="form.email" class="bg-gray-300" />
           <br>
           <input v-model="form.password" class="bg-gray-300" />
 
-          <button>Login</button>
+          <button>{{ $t('loginPage.loginButton') }}</button>
         </form>
       </div>
     </div>

@@ -56,10 +56,10 @@
                       <span class="ml-2">{{ $t('BrandDefault.nav.settings') }}</span>
                     </a>
 
-                    <a href="#" class="flex flex-row items-center px-4 py-2 text-sm text-red-500 hover:text-red-700 hover:bg-red-100 focus:outline-none focus:text-red-700 focus:bg-red-100">
+                    <button @click="logout" class="w-100 flex flex-row items-center px-4 py-2 text-sm text-red-500 hover:text-red-700 hover:bg-red-100 focus:outline-none focus:text-red-700 focus:bg-red-100">
                       <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
                       <span class="ml-2">{{ $t('BrandDefault.nav.logout') }}</span>
-                    </a>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -82,5 +82,11 @@ export default {
       }
     },
   }),
+
+  methods: {
+    logout() {
+      this.$auth.logout();
+    }
+  },
 }
 </script>

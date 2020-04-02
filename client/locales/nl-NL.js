@@ -1,4 +1,5 @@
 export default {
+  // BrandDefault Layout
   BrandDefault: {
     nav: {
       catalog: 'Catalogus',
@@ -9,5 +10,15 @@ export default {
       settings: 'Instellingen',
       logout: 'Uitloggen',
     },
+
+    footer: {
+      copyright: 'bij Leer Platform',
+    },
+  },
+
+  // Login Page
+  loginPage: {
+    title: 'Inloggen',
+    loginButton: 'Inloggen',
   },
 }

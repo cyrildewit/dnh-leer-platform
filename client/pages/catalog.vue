@@ -13,12 +13,12 @@
       <div class="py-6" v-for="(topic, key, index) in topicsFiltered" :key="index">
 
         <div class="mb-4 pb-3 border-b border-gray-400">
-          <h2 class="font-medium text-lg">{{ topic.display_name }}</h2>
+          <h2 class="font-medium text-lg">{{ topic.display_name }} ({{ topic.courses.length }})</h2>
         </div>
 
         <div class="flex -mx-2" >
           <div class="w-1/3 px-2 mb-2" v-for="course in topic.courses" :key="course.id">
-            <nuxt-link class="flex px-3 py-3 bg-white hover:bg-gray-100 border shadow rounded" :to="localePath({ name: 'topics-slug', params: { slug: topic.slug } })">
+            <nuxt-link class="flex px-3 py-3 bg-white hover:bg-gray-100 border shadow rounded" :to="localePath({ name: 'courses-slug', params: { slug: course.slug } })">
             <span class="font-medium">{{ course.title }}</span>
           </nuxt-link>
           </div>
