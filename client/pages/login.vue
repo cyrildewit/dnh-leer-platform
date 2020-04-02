@@ -19,6 +19,8 @@
 
 <script>
 export default {
+  name: 'Login',
+
   auth: 'guest',
 
   layout: 'BrandDefault',
