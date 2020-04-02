@@ -13,7 +13,7 @@
       <div class="py-12" v-if="topicCoursesCount > 0">
 
         <div class="mb-4 pb-3 border-b border-gray-400">
-          <h2 class="font-medium text-lg">Populaire Cursussen</h2>
+          <h2 class="font-medium text-lg">{{ $t('misc.popularCourses') }}</h2>
         </div>
 
         <div class="flex -mx-2" v-for="(courseChunk, key, index) in chunkedPopularCourses" :key="index">
@@ -29,7 +29,7 @@
       <div class="py-12">
 
         <div class="mb-4 pb-3 border-b border-gray-400">
-          <h2 class="font-medium text-lg">Alle Cursussen</h2>
+          <h2 class="font-medium text-lg">{{ $t('misc.allCourses') }}</h2>
         </div>
 
         <template v-if="topicCoursesCount > 0">
@@ -42,7 +42,7 @@
           </div>
         </template>
 
-        <p v-else>Er zijn geen cursussen gevonden voor het onderwerp {{ topic.display_name.toLowerCase() }}.</p>
+        <p v-else>{{ $t('topicsPage.noCoursesFoundForTopic', { topic: topic.display_name.toLowerCase() }) }}</p>
 
       </div>
 

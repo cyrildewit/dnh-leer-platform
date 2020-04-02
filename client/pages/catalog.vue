@@ -3,8 +3,8 @@
 
     <div class="py-8 bg-gray-100 border-b border-gray-300">
       <div class="container mx-auto px-6">
-        <h1 class="text-2xl mb-2">Catalogus</h1>
-        <p class="text-base">Overzicht van alle cursussen</p>
+        <h1 class="text-2xl mb-2">{{ $t('catalogPage.title') }}</h1>
+        <p class="text-base">{{ $t('catalogPage.subtitle') }}</p>
       </div>
     </div>
 
@@ -46,8 +46,6 @@ export default {
     }),
     topicsFiltered() {
       return _.orderBy(this.topics, [(topic) => {
-        console.log(topic);
-
         if (topic.courses === undefined) {return}
 
         if (topic.courses.length > 0) {

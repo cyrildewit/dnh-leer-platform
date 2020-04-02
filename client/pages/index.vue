@@ -3,8 +3,8 @@
 
     <div class="py-12 bg-gray-100 text-center border-b border-gray-300">
       <div class="container mx-auto px-6">
-        <h1 class="text-2xl mb-2">Welkom op het Leer Platform</h1>
-        <p class="text-lg">Leer, ontdek en ontwikkel jouw talent</p>
+        <h1 class="text-2xl mb-2">{{ $t('homePage.title') }}</h1>
+        <p class="text-lg">{{ $t('homePage.subtitle') }}</p>
       </div>
     </div>
 
@@ -13,7 +13,7 @@
       <div class="py-12">
 
         <div class="mb-4 pb-3 border-b border-gray-400">
-          <h2 class="font-medium text-lg">Populaire Onderwerpen</h2>
+          <h2 class="font-medium text-lg">{{ $t('misc.popularTopics') }}</h2>
         </div>
 
         <div class="flex -mx-2" v-for="(topicChunk, key, index) in chunkedTopics" :key="index">
@@ -30,7 +30,7 @@
       <div class="py-12">
 
         <div class="mb-4 pb-3 border-b border-gray-400">
-          <h2 class="font-medium text-lg">Populaire Cursussen</h2>
+          <h2 class="font-medium text-lg">{{ $t('misc.popularCourses') }}</h2>
         </div>
 
         <div class="flex -mx-2" v-for="(courseChunk, key, index) in chunkedCourses" :key="index">
