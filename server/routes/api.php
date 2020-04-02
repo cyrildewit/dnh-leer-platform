@@ -17,6 +17,7 @@ Route::prefix('v1')->group(function () {
 
     Route::prefix('courses')->group(function () {
         Route::get('/', [CourseController::class, 'index']);
+        Route::get('/getBySlug/{slug}', [CourseController::class, 'getBySlug']);
     });
 
     Route::prefix('topics')->group(function () {
