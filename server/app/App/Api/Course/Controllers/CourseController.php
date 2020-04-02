@@ -2,12 +2,12 @@
 
 namespace App\Api\Course\Controllers;
 
-use Support\Controller;
-use Illuminate\Http\Request;
-use Domain\Course\Models\Course;
 use App\Api\Course\Resources\Course as CourseResource;
 use App\Api\Course\Resources\CourseCollection;
+use Domain\Course\Models\Course;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Http\Request;
+use Support\Controller;
 
 final class CourseController extends Controller
 {
@@ -23,7 +23,7 @@ final class CourseController extends Controller
         $course = Course::where('slug', $slug)->first();
 
         if ($course === null) {
-            throw new ModelNotFoundException;
+            throw new ModelNotFoundException();
         }
 
         return new CourseResource($course);

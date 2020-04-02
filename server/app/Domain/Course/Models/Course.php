@@ -2,13 +2,13 @@
 
 namespace Domain\Course\Models;
 
-use Domain\Model;
-use Domain\User\Models\User;
-use Domain\Topci\Models\Topic;
-use CyrildeWit\EloquentViewable\InteractsWithViews;
 use CyrildeWit\EloquentViewable\Contracts\Viewable;
-use Illuminate\Database\Eloquent\Relationships\BelongsToMany;
+use CyrildeWit\EloquentViewable\InteractsWithViews;
 use CyrildeWit\EloquentViewable\Support\Period;
+use Domain\Model;
+use Domain\Topci\Models\Topic;
+use Domain\User\Models\User;
+use Illuminate\Database\Eloquent\Relationships\BelongsToMany;
 
 class Course extends Model implements Viewable
 {

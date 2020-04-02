@@ -1,8 +1,7 @@
 <?php
 
-use Illuminate\Database\Seeder;
-
 use Domain\Topic\Models\Topic;
+use Illuminate\Database\Seeder;
 
 class TopicsTableSeeder extends Seeder
 {

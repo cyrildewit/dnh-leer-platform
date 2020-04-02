@@ -2,13 +2,12 @@
 
 namespace Domain\User\Models;
 
-use Spatie\MediaLibrary\HasMedia;
-use Spatie\MediaLibrary\InteractsWithMedia;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Tymon\JWTAuth\Contracts\JWTSubject;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
+use Tymon\JWTAuth\Contracts\JWTSubject;
 
 class User extends Authenticatable implements JWTSubject, HasMedia
 {
@@ -23,7 +22,7 @@ class User extends Authenticatable implements JWTSubject, HasMedia
 
     protected $casts = [
         'email_verified_at' => 'datetime',
-        'last_login_at' => 'datetime',
+        'last_login_at'     => 'datetime',
     ];
 
     public function registerMediaConversions(Media $media = null): void

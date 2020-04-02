@@ -2,12 +2,10 @@
 
 namespace App\Api\User\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\Controller;
-use App\Api\User\Resources\User as UserResource;
 use App\Api\User\Requests\UserUpdateRequest;
+use App\Api\User\Resources\User as UserResource;
 use Domain\User\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 final class UserController
 {

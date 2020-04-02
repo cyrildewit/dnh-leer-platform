@@ -1,12 +1,11 @@
 <?php
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
-use App\Api\User\Controllers\LoginController;
-use App\Api\User\Controllers\UserController;
 use App\Api\Course\Controllers\CourseController;
 use App\Api\Topic\Controllers\TopicController;
+use App\Api\User\Controllers\LoginController;
+use App\Api\User\Controllers\UserController;
 use App\Api\View\Controllers\ViewController;
+use Illuminate\Support\Facades\Route;
 
 Route::prefix('v1')->group(function () {
     Route::prefix('auth')->group(function () {
