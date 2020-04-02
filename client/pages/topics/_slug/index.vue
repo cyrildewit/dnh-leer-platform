@@ -10,7 +10,7 @@
 
     <div class="container mx-auto px-6">
 
-      <div class="py-12" v-if="topicCourses">
+      <div class="py-12" v-if="topicCoursesCount > 0">
 
         <div class="mb-4 pb-3 border-b border-gray-400">
           <h2 class="font-medium text-lg">Populaire Cursussen</h2>
@@ -32,7 +32,7 @@
           <h2 class="font-medium text-lg">Alle Cursussen</h2>
         </div>
 
-        <template v-if="topicCourses">
+        <template v-if="topicCoursesCount > 0">
           <div class="flex -mx-2" v-for="(courseChunk, key, index) in chunkedAllCourses" :key="index">
             <div class="w-1/3 px-2 mb-2" v-for="course in courseChunk" :key="course.id">
               <nuxt-link class="flex px-3 py-3 bg-white hover:bg-gray-100 border shadow rounded" :to="localePath({ name: 'courses-slug', params: { slug: course.slug } })">
@@ -72,6 +72,10 @@ export default {
 
     chunkedAllCourses() {
       return _.chunk(this.topicCourses, 3)
+    },
+
+    topicCoursesCount() {
+      return this.topicCourses.length;
     },
   },
 

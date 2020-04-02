@@ -40,8 +40,8 @@ export default {
     this.$store.dispatch('topics/fetchCourseBySlug', this.$route.params.slug);
 
     this.$axios.post('http://dnh-leer-platform.test/api/v1/views/record-course-view/'+1, {
-      // 'visitor': 'dsfda',
-      // 'ip_address': '33535',
+      'visitor': 'dsfda',
+      'ip_address': '33535',
       'has_do_not_track_header': false,
       'is_crawler': false,
     })

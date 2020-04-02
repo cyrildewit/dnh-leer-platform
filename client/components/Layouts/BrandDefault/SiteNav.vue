@@ -10,11 +10,11 @@
               <img src="~/assets/img/logo-icon-transparent-150x144.png" class="h-12" alt="Leer Platform Logo">
             </nuxt-link>
 
-            <nuxt-link to="/catalog" class="flex flex-row items-center px-3 py-2 font-medium rounded-md focus:outline-none focus:text-white focus:bg-gray-700">
+            <nuxt-link to="/catalog" class="flex flex-row items-center px-3 py-2 font-medium rounded-md hover:text-gray-600 focus:outline-none focus:text-gray-800">
               {{ $t('BrandDefault.nav.catalog') }}
             </nuxt-link>
 
-            <nuxt-link to="/subjects" class="flex flex-row items-center px-3 py-2 font-medium rounded-md focus:outline-none focus:text-white focus:bg-gray-700">
+            <nuxt-link to="/subjects" class="flex flex-row items-center px-3 py-2 font-medium rounded-md hover:text-gray-600 focus:outline-none focus:text-gray-800">
               {{ $t('BrandDefault.nav.topics') }}
             </nuxt-link>
 
@@ -24,11 +24,11 @@
         <div class="flex items-center">
 
           <template v-if="! $auth.loggedIn">
-            <nuxt-link to="/login" class="flex flex-row items-center px-3 py-2 font-medium rounded-md focus:outline-none focus:text-white focus:bg-gray-700">
+            <nuxt-link to="/login" class="flex flex-row items-center px-3 py-2 font-medium rounded-md hover:text-gray-600 focus:outline-none focus:text-gray-800">
               {{ $t('BrandDefault.nav.login') }}
             </nuxt-link>
 
-            <nuxt-link to="/register" class="flex flex-row items-center px-3 py-2 font-medium rounded-md focus:outline-none focus:text-white focus:bg-gray-700">
+            <nuxt-link to="/register" class="flex flex-row items-center px-3 py-2 font-medium rounded-md hover:text-gray-600 focus:outline-none focus:text-gray-800">
               {{ $t('BrandDefault.nav.register') }}
             </nuxt-link>
           </template>
@@ -38,7 +38,7 @@
               <div class="relative ml-3">
                 <div>
                   <button @click="navigation.profile.open = !navigation.profile.open " class="flex items-center max-w-xs font-medium focus:outline-none focus:shadow-solid" aria-label="User menu" aria-haspopup="true">
-                    <span class="mr-3">{{ $auth.user.name }}</span>
+                    <span class="mr-3 hover:text-gray-600 focus:outline-none focus:text-gray-800">{{ $auth.user.name }}</span>
 
                     <img class="w-10 h-10 rounded-full" :src="$auth.user.avatar" alt="Profile Picture" />
                   </button>
