@@ -11,4 +11,9 @@ use Illuminate\Database\Eloquent\Relationships\BelongsToMany;
 class Topic extends Model implements Viewable
 {
     use InteractsWithViews;
+
+    public function getUniqueViewsCount()
+    {
+        return views($this)->unique()->count();
+    }
 }

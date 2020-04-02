@@ -20,6 +20,7 @@ class Topic extends JsonResource
             'slug' => $this->slug,
             'description' => $this->description,
             'status' => $this->status,
+            'unique_views_count' => $this->getUniqueViewsCount(),
         ];
     }
 }
