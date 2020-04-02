@@ -29,6 +29,7 @@ class DatabaseSeeder extends Seeder
         $this->call(TopicsTableSeeder::class);
 
         Course::create([
+            'topic_id' => 5,
             'slug' => 'masterclass-php',
             'title' => 'Masterclass PHP',
             'headline' => 'Become convenient in PHP and build great applications.',

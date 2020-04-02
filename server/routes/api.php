@@ -23,6 +23,7 @@ Route::prefix('v1')->group(function () {
     Route::prefix('topics')->group(function () {
         Route::get('/', [TopicController::class, 'index']);
         Route::get('/getBySlug/{slug}', [TopicController::class, 'getBySlug']);
+        Route::get('/getBySlug/{slug}/courses', [TopicController::class, 'getBySlugCourses']);
     });
 
     Route::prefix('users')->group(function () {

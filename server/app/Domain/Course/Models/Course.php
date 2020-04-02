@@ -8,6 +8,7 @@ use Domain\Topci\Models\Topic;
 use CyrildeWit\EloquentViewable\InteractsWithViews;
 use CyrildeWit\EloquentViewable\Contracts\Viewable;
 use Illuminate\Database\Eloquent\Relationships\BelongsToMany;
+use CyrildeWit\EloquentViewable\Support\Period;
 
 class Course extends Model implements Viewable
 {
@@ -28,12 +29,14 @@ class Course extends Model implements Viewable
 
     public function topics()
     {
-        return $this->belongsToMany(Topic::class, 'course_topic', 'course_id', 'topic_id')
-            ->withTimestamps();
+        return $this->belongsTo(Topic::class)->withTimestamps();
     }
 
     public function getUniqueViewsCount()
     {
-        return views($this)->unique()->count();
+        return views($this)
+            ->period(Period::subMonths(1))
+            ->unique()
+            ->count();
     }
 }

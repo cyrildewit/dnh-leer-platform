@@ -16,6 +16,11 @@ class CreateCoursesTable extends Migration
         Schema::create('courses', function (Blueprint $table) {
             $table->id();
 
+            $table->integer('topic_id')->unsigned();
+            // $table->foreign('topic_id')
+            //     ->references('id')->on('topics')
+            //     ->onDelete('cascade');
+
             $table->string('slug')->unique();
 
             // Course content

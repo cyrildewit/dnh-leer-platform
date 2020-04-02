@@ -6,6 +6,7 @@ use Support\Controller;
 use Illuminate\Http\Request;
 use Domain\Topic\Models\Topic;
 use App\Api\Topic\Resources\TopicCollection;
+use App\Api\Course\Resources\CourseCollection;
 use App\Api\Topic\Resources\Topic as TopicResource;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
@@ -27,5 +28,18 @@ final class TopicController extends Controller
         }
 
         return new TopicResource($topic);
+    }
+
+    protected function getBySlugCourses(Request $request, $slug)
+    {
+        $topic = Topic::where('slug', $slug)->with('courses')->first();
+
+        if ($topic === null) {
+            throw new ModelNotFoundException;
+        }
+
+        $courses = $topic->courses;
+
+        return new CourseCollection($courses);
     }
 }
