@@ -12,37 +12,7 @@
       <div class="py-12">
 
         <div class="mb-4 pb-3 border-b border-gray-400">
-          <h2 class="font-medium text-lg"></h2>
-        </div>
-
-        <div class="flex -mx-2">
-          <div class="w-1/3 px-2">
-            <div class="bg-white border-t border-b shadow">
-              <div class="border-b">
-
-                <div class="flex justify-between px-6 -mb-px">
-                  <h3 class="text-blue-dark py-4 font-normal text-lg">Recent Activity</h3>
-                </div>
-
-              </div>
-            </div>
-          </div>
-          <div class="w-1/3 px-2">
-
-            <div v-for="topic in topics" :key="topic.id">
-              <!-- <nuxt-link :to="'/topics/' + ">
-                {{ topic.display_name }}
-              </nuxt-link> -->
-            </div>
-
-
-          </div>
-          <div class="w-1/3 px-2">
-
-
-
-
-          </div>
+          <!-- <h2 class="font-medium text-lg">{{ topic.display_name }}</h2> -->
         </div>
 
       </div>
@@ -59,12 +29,12 @@ export default {
 
   computed: {
     ...mapGetters({
-      topics: 'topics/all',
+      topic: 'topics/currentTopic',
     }),
   },
 
   mounted() {
-    this.$store.dispatch('topics/fetchTopics');
+    this.$store.dispatch('topics/fetchTopicBySlug', this.$route.params.slug);
   },
 }
 </script>
