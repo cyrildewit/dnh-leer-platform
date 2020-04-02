@@ -2,10 +2,9 @@
 
 namespace App\Api\View\Controllers;
 
-use Domain\Topic\Models\Topic;
 use Domain\Course\Models\Course;
+use Domain\Topic\Models\Topic;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Support\CustomVisitor;
 
 final class ViewController

@@ -2,14 +2,11 @@
 
 namespace Domain\Topic\Models;
 
-use Domain\Model;
-use Domain\User\Models\User;
-use Domain\Course\Models\Course;
-use CyrildeWit\EloquentViewable\InteractsWithViews;
 use CyrildeWit\EloquentViewable\Contracts\Viewable;
+use CyrildeWit\EloquentViewable\InteractsWithViews;
 use CyrildeWit\EloquentViewable\Support\Period;
-use Illuminate\Database\Eloquent\Relationships\BelongsToMany;
-
+use Domain\Course\Models\Course;
+use Domain\Model;
 
 class Topic extends Model implements Viewable
 {

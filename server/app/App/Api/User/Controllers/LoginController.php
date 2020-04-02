@@ -2,12 +2,11 @@
 
 namespace App\Api\User\Controllers;
 
-use Support\Controller;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Validation\ValidationException;
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Support\Controller;
 
 final class LoginController extends Controller
 {
@@ -22,7 +21,7 @@ final class LoginController extends Controller
     {
         $token = $this->guard()->attempt($this->credentials($request));
 
-        if (! $token) {
+        if (!$token) {
             return false;
         }
 
@@ -41,7 +40,7 @@ final class LoginController extends Controller
         $expiration = $this->guard()->getPayload()->get('exp');
 
         return response()->json([
-            'token' => $token,
+            'token'      => $token,
             'token_type' => 'bearer',
             'expires_in' => $expiration - time(),
         ]);

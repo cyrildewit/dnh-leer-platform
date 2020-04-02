@@ -2,13 +2,13 @@
 
 namespace App\Api\Topic\Controllers;
 
-use Support\Controller;
-use Illuminate\Http\Request;
-use Domain\Topic\Models\Topic;
-use App\Api\Topic\Resources\TopicCollection;
 use App\Api\Course\Resources\CourseCollection;
 use App\Api\Topic\Resources\Topic as TopicResource;
+use App\Api\Topic\Resources\TopicCollection;
+use Domain\Topic\Models\Topic;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Http\Request;
+use Support\Controller;
 
 final class TopicController extends Controller
 {
@@ -28,7 +28,7 @@ final class TopicController extends Controller
         $topic = Topic::where('slug', $slug)->first();
 
         if ($topic === null) {
-            throw new ModelNotFoundException;
+            throw new ModelNotFoundException();
         }
 
         return new TopicResource($topic);
@@ -39,7 +39,7 @@ final class TopicController extends Controller
         $topic = Topic::where('slug', $slug)->with('courses')->first();
 
         if ($topic === null) {
-            throw new ModelNotFoundException;
+            throw new ModelNotFoundException();
         }
 
         $courses = $topic->courses;
