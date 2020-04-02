@@ -17,7 +17,7 @@
 
         <div class="flex -mx-2" v-for="(topicChunk, key, index) in chunkedTopics" :key="index">
           <div class="w-1/3 px-2" v-for="(topic) in topicChunk" :key="topic.id">
-            <nuxt-link class="" :to="{ name: 'topics', params: { slug: topic.slug } }">
+            <nuxt-link class="" :to="localePath({ name: 'topics-slug', params: { slug: topic.slug } })">
              {{ topic.display_name }}
            </nuxt-link>
           </div>
@@ -101,6 +101,13 @@ export default {
 
   mounted() {
     this.$store.dispatch('topics/fetchTopics');
+
+    this.$axios.post('http://dnh-leer-platform.test/api/v1/views/record-topic-view/'+1, {
+      'visitor': 'dsfda',
+      'ip_address': '33535',
+      'has_do_not_track_header': false,
+      'is_crawler': false,
+    })
   },
 }
 </script>
