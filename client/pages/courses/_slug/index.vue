@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="course">
 
     <!-- <div class="py-12 bg-gray-100 text-center border-b border-gray-300">
       <div class="container mx-auto px-6">
@@ -12,7 +12,7 @@
       <div class="py-12">
 
         <div class="mb-4 pb-3 border-b border-gray-400">
-          <!-- <h2 class="font-medium text-lg">{{ topic.display_name }}</h2> -->
+          <h2 class="font-medium text-lg">{{ course.title }}</h2>
         </div>
 
       </div>
@@ -31,12 +31,12 @@ export default {
 
   computed: {
     ...mapGetters({
-      topic: 'topics/currentTopic',
+      course: 'topics/course',
     }),
   },
 
   mounted() {
-    this.$store.dispatch('topics/fetchTopicBySlug', this.$route.params.slug);
+    this.$store.dispatch('topics/fetchCourseBySlug', this.$route.params.slug);
   },
 }
 </script>

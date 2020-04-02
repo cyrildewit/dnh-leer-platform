@@ -16,6 +16,7 @@
           <h2 class="font-medium text-lg">Populaire Onderwerpen</h2>
         </div>
 
+        <!-- <template v-if="chunkedTopics">
         <div class="flex -mx-2" v-for="(topicChunk, key, index) in chunkedTopics" :key="index">
           <div class="w-1/3 px-2 mb-2" v-for="(topic) in topicChunk" :key="topic.id">
             <nuxt-link class="flex px-3 py-3 bg-white hover:bg-gray-100 border shadow rounded" :to="localePath({ name: 'topics-slug', params: { slug: topic.slug } })">
@@ -23,6 +24,7 @@
            </nuxt-link>
           </div>
         </div>
+        </template> -->
 
       </div>
 
@@ -33,13 +35,15 @@
           <h2 class="font-medium text-lg">Populaire Cursussen</h2>
         </div>
 
-        <div class="flex -mx-2" v-for="(topicChunk, key, index) in chunkedTopics" :key="index">
+        <!-- <template v-if="chunkedCourses">
+        <div class="flex -mx-2" v-for="(topicChunk, key, index) in chunkedCourses" :key="index">
           <div class="w-1/3 px-2 mb-2" v-for="(topic) in topicChunk" :key="topic.id">
             <nuxt-link class="flex px-3 py-3 bg-white hover:bg-gray-100 border shadow rounded" :to="localePath({ name: 'topics-slug', params: { slug: topic.slug } })">
              <span class="font-medium">{{ topic.display_name }}</span>
            </nuxt-link>
           </div>
         </div>
+        </template> -->
 
       </div>
 
@@ -112,22 +116,27 @@ export default {
   computed: {
     ...mapGetters({
       topics: 'topics/popular',
+      courses: 'courses/popular',
     }),
     chunkedTopics() {
       return _.chunk(
-        _.take(this.topics(), 6), 3)
+        _.take(this.topics, 6), 3)
+    },
+    chunkedCourses() {
+      return _.chunk(
+        _.take(this.courses, 6), 3)
     },
   },
 
   mounted() {
     this.$store.dispatch('topics/fetchTopics');
 
-    this.$axios.post('http://dnh-leer-platform.test/api/v1/views/record-topic-view/'+1, {
-      'visitor': 'dsfda',
-      'ip_address': '33535',
-      'has_do_not_track_header': false,
-      'is_crawler': false,
-    })
+    // this.$axios.post('http://dnh-leer-platform.test/api/v1/views/record-topic-view/'+1, {
+    //   'visitor': 'dsfda',
+    //   'ip_address': '33535',
+    //   'has_do_not_track_header': false,
+    //   'is_crawler': false,
+    // })
   },
 }
 </script>
