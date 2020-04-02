@@ -55,6 +55,16 @@ export const actions = {
     }
   },
 
+  async fetchTopicsWithCourses({ commit }) {
+    try {
+      const { data } = await axios.get('http://dnh-leer-platform.test/api/v1/topics?with=courses')
+
+      commit(SET_TOPICS, { topics: data.data })
+    } catch (e) {
+      commit(REMOVE_TOPICS)
+    }
+  },
+
   async fetchTopicBySlug({ commit }, slug) {
     try {
       const { data } = await axios.get('http://dnh-leer-platform.test/api/v1/topics/getBySlug/' + slug)

@@ -14,9 +14,13 @@ final class TopicController extends Controller
 {
     protected function index(Request $request)
     {
-        $topics = Topic::all();
+        $topics = Topic::query();
 
-        return new TopicCollection($topics);
+        if ($request->has('with')) {
+            $topics->with($request->input('with'));
+        }
+
+        return new TopicCollection($topics->get());
     }
 
     protected function getBySlug(Request $request, $slug)

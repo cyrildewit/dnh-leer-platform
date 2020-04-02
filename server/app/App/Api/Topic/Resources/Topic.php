@@ -2,6 +2,7 @@
 
 namespace App\Api\Topic\Resources;
 
+use App\Api\Course\Resources\CourseCollection;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class Topic extends JsonResource
@@ -21,6 +22,7 @@ class Topic extends JsonResource
             'description' => $this->description,
             'status' => $this->status,
             'unique_views_count' => $this->getUniqueViewsCount(),
+            'courses' => new CourseCollection($this->courses),
         ];
     }
 }
