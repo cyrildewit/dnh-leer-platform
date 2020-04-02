@@ -88,6 +88,8 @@ import _ from 'lodash'
 import { mapGetters } from 'vuex'
 
 export default {
+  name: 'Index',
+
   layout: 'BrandDefault',
 
   computed: {
@@ -95,7 +97,8 @@ export default {
       topics: 'topics/popular',
     }),
     chunkedTopics() {
-      return _.chunk(this.topics(6), 3)
+      return _.chunk(
+        _.take(this.topics(), 6), 3)
     },
   },
 
