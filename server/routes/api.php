@@ -31,5 +31,6 @@ Route::prefix('v1')->group(function () {
 
     Route::prefix('views')->group(function () {
         Route::post('/record-topic-view/{id}', [ViewController::class, 'recordTopicView']);
+        Route::post('/record-course-view/{id}', [ViewController::class, 'recordCourseView']);
     });
 });

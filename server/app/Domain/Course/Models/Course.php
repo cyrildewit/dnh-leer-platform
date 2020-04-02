@@ -5,10 +5,14 @@ namespace Domain\Course\Models;
 use Domain\Model;
 use Domain\User\Models\User;
 use Domain\Topci\Models\Topic;
+use CyrildeWit\EloquentViewable\InteractsWithViews;
+use CyrildeWit\EloquentViewable\Contracts\Viewable;
 use Illuminate\Database\Eloquent\Relationships\BelongsToMany;
 
-class Course extends Model
+class Course extends Model implements Viewable
 {
+    use InteractsWithViews;
+
     protected $table = 'courses';
 
     protected $casts = [
