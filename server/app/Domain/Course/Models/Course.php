@@ -31,4 +31,9 @@ class Course extends Model implements Viewable
         return $this->belongsToMany(Topic::class, 'course_topic', 'course_id', 'topic_id')
             ->withTimestamps();
     }
+
+    public function getUniqueViewsCount()
+    {
+        return views($this)->unique()->count();
+    }
 }
