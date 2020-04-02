@@ -16,15 +16,13 @@
           <h2 class="font-medium text-lg">Populaire Onderwerpen</h2>
         </div>
 
-        <!-- <template v-if="chunkedTopics">
         <div class="flex -mx-2" v-for="(topicChunk, key, index) in chunkedTopics" :key="index">
-          <div class="w-1/3 px-2 mb-2" v-for="(topic) in topicChunk" :key="topic.id">
+          <div class="w-1/3 px-2 mb-2" v-for="topic in topicChunk" :key="topic.id">
             <nuxt-link class="flex px-3 py-3 bg-white hover:bg-gray-100 border shadow rounded" :to="localePath({ name: 'topics-slug', params: { slug: topic.slug } })">
-             <span class="font-medium">{{ topic.display_name }}</span>
-           </nuxt-link>
+            <span class="font-medium">{{ topic.display_name }}</span>
+          </nuxt-link>
           </div>
         </div>
-        </template> -->
 
       </div>
 
@@ -35,15 +33,13 @@
           <h2 class="font-medium text-lg">Populaire Cursussen</h2>
         </div>
 
-        <!-- <template v-if="chunkedCourses">
-        <div class="flex -mx-2" v-for="(topicChunk, key, index) in chunkedCourses" :key="index">
-          <div class="w-1/3 px-2 mb-2" v-for="(topic) in topicChunk" :key="topic.id">
-            <nuxt-link class="flex px-3 py-3 bg-white hover:bg-gray-100 border shadow rounded" :to="localePath({ name: 'topics-slug', params: { slug: topic.slug } })">
-             <span class="font-medium">{{ topic.display_name }}</span>
+        <div class="flex -mx-2" v-for="(courseChunk, key, index) in chunkedCourses" :key="index">
+          <div class="w-1/3 px-2 mb-2" v-for="course in courseChunk" :key="course.id">
+            <nuxt-link class="flex px-3 py-3 bg-white hover:bg-gray-100 border shadow rounded" :to="localePath({ name: 'courses-slug', params: { slug: course.slug } })">
+             <span class="font-medium">{{ course.title }}</span>
            </nuxt-link>
           </div>
         </div>
-        </template> -->
 
       </div>
 
@@ -130,13 +126,7 @@ export default {
 
   mounted() {
     this.$store.dispatch('topics/fetchTopics');
-
-    // this.$axios.post('http://dnh-leer-platform.test/api/v1/views/record-topic-view/'+1, {
-    //   'visitor': 'dsfda',
-    //   'ip_address': '33535',
-    //   'has_do_not_track_header': false,
-    //   'is_crawler': false,
-    // })
+    this.$store.dispatch('courses/fetchCourses');
   },
 }
 </script>

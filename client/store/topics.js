@@ -13,29 +13,14 @@ export const state = () => ({
 
 
 export const getters = {
-  /**
-   * Get sectors ordered by rank.
-   *
-   * @return {Array}
-   */
   all: state => {
     return state.topics;
   },
 
-  /**
-   * Get sectors ordered by rank.
-   *
-   * @return {Array}
-   */
-  popular: state => n => {
+  popular: state => {
     return _.orderBy(state.topics, 'unique_views_count')
   },
 
-  /**
-   * Get sectors ordered by rank.
-   *
-   * @return {Array}
-   */
   currentTopic: state => {
     return state.currentTopic;
   },

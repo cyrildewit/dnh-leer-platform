@@ -7,8 +7,8 @@ const SET_CURRENT_COURSE = 'SET_CURRENT_COURSE'
 const REMOVE_CURRENT_COURSE = 'REMOVE_CURRENT_COURSE'
 
 export const state = () => ({
-  topics: [],
-  currentTopic: null,
+  courses: [],
+  currentCourse: null,
 })
 
 
@@ -19,52 +19,42 @@ export const getters = {
    * @return {Array}
    */
   all: state => {
-    return state.topics;
+    return state.courses;
   },
 
-  /**
-   * Get sectors ordered by rank.
-   *
-   * @return {Array}
-   */
-  popular: state => n => {
-    return _.orderBy(state.topics, 'unique_views_count')
+  popular: state => {
+    return _.orderBy(state.courses, 'unique_views_count')
   },
 
-  /**
-   * Get sectors ordered by rank.
-   *
-   * @return {Array}
-   */
-  currentTopic: state => {
-    return state.currentTopic;
+  currentCourse: state => {
+    return state.currentCourse;
   },
 }
 
 export const mutations = {
-  [SET_COURSES](state, { topics }) {
-    state.topics = topics
+  [SET_COURSES](state, { courses }) {
+    state.courses = courses
   },
 
   [REMOVE_COURSES](state) {
-    state.topics = []
+    state.courses = []
   },
 
-  [SET_CURRENT_COURSE](state, { topic }) {
-    state.currentTopic = topic
+  [SET_CURRENT_COURSE](state, { course }) {
+    state.currentCourse = course
   },
 
   [REMOVE_CURRENT_COURSE](state) {
-    state.currentTopic = null
+    state.currentCourse = null
   },
 }
 
 export const actions = {
-  async fetchTopics({ commit }) {
+  async fetchCourses({ commit }) {
     try {
       const { data } = await axios.get('http://dnh-leer-platform.test/api/v1/courses')
 
-      commit(SET_COURSES, { topics: data.data })
+      commit(SET_COURSES, { courses: data.data })
     } catch (e) {
       commit(REMOVE_COURSES)
     }
