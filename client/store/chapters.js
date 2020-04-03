@@ -31,7 +31,7 @@ export const actions = {
     try {
       const { data } = await axios.get('http://dnh-leer-platform.test/api/v1/chapters/' + id)
 
-      commit(SET_CURRENT_CHAPTER, { chapter: data.data })
+      commit(SET_CURRENT_CHAPTER, { chapter: data })
     } catch (e) {
       commit(REMOVE_CURRENT_CHAPTER)
     }
@@ -41,7 +41,7 @@ export const actions = {
     try {
       const { data } = await axios.get('http://dnh-leer-platform.test/api/v1/chapters/getBySlug/' + slug)
 
-      commit(SET_CURRENT_CHAPTER, { chapter: data.data })
+      commit(SET_CURRENT_CHAPTER, { chapter: data })
     } catch (e) {
       commit(REMOVE_CURRENT_CHAPTER)
     }

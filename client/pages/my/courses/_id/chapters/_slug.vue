@@ -1,5 +1,5 @@
 <template>
-  <div v-if="course">
+  <div v-if="course && chapter">
 
     <div class="py-8 bg-gray-100 border-b border-gray-300">
       <div class="container mx-auto px-6">
@@ -29,44 +29,38 @@
         <div class="flex -mx-4">
 
           <div class="w-4/12 px-4">
-            <div class="mb-4" v-for="chapter in course.chapters" :key="chapter.id">
-              <h2 class="font-medium text-lg mb-2">{{ chapter.title }}</h2>
+            <h2 class="uppercase text-sm mb-4">Hoofdstukken</h2>
 
+            <div class="mb-4" v-for="chapter in course.chapters" :key="chapter.id">
               <nuxt-link
-                :to="localePath({ name: 'my-courses-id', params: { id: this.course.id } })">{{ section.title }}</nuxt-link>
+                :to="localePath({ name: 'my-courses-id-chapters-slug', params: { id: course.id, slug: chapter.slug } })"
+                class="font-medium text-lg mb-2 hover:text-blue-700"
+              >
+                {{ chapter.title }}
+              </nuxt-link>
+
+              <!-- <nuxt-link
+                v-for="section in chapter.sections" :key="section.id"
+                :to="localePath({ name: 'my-courses-id-chapters-s', params: { id: course.id } })"
+              > -->
 
             </div>
           </div>
 
           <div class="w-8/12 px-4">
             <div class="border shadow rounded px-6 py-6">
-              <h2 class="font-medium text-2xl mb-2">Over deze cursus</h2>
+              <h2 class="font-medium text-2xl mb-2">{{ chapter.title }}</h2>
 
               <div class="course-content" v-html="course.description"></div>
+            </div>
 
-              <h2 class="font-medium text-2xl mb-2">Wat leer je tijdens deze cursus</h2>
-              <ul>
-                <li class="list-disc list-inside ml-2" v-for="learning_point in course.learning_points" :key="learning_point">{{ learning_point }}</li>
-              </ul>
+            <div class="border shadow rounded px-6 py-6 mt-6" v-for="section in chapter.sections" :key="section.id">
+              <h2 class="font-medium text-lg mb-2">{{ section.title }}</h2>
+
+              <div class="course-content" v-html="section.content"></div>
             </div>
           </div>
 
-        </div>
-
-      </div>
-
-    </div>
-
-    <div class="container mx-auto px-6">
-
-      <div class="mt-6 max-w-2xl mx-auto">
-        <h2 class="font-medium text-2xl text-center mb-6">Curriculum van deze cursus</h2>
-
-        <div>
-          <div v-for="chapter in course.chapters" :key="chapter.id" class="border shadow rounded px-6 py-4 mb-4">
-            <h3 class="font-medium text-xl mb-2">{{ chapter.title }}</h3>
-            <p class="mb-1" v-for="section in chapter.sections" :key="section.id">{{ section.title }}</p>
-          </div>
         </div>
 
       </div>
@@ -87,7 +81,7 @@ export default {
   computed: {
     ...mapGetters({
       course: 'courses/currentCourse',
-      chapter: 'courses/currentChapter',
+      chapter: 'chapters/currentChapter',
     }),
   },
 
@@ -95,10 +89,8 @@ export default {
   },
 
   mounted() {
-
     this.$store.dispatch('courses/fetchCourse', this.$route.params.id)
       .then(() => {
-
         this.$store.dispatch('chapters/fetchChapterBySlug', this.$route.params.slug)
       });
   },
