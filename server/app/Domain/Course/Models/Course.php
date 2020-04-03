@@ -8,8 +8,8 @@ use CyrildeWit\EloquentViewable\Support\Period;
 use Domain\Model;
 use Domain\Topic\Models\Topic;
 use Domain\User\Models\User;
-use Spatie\Tags\HasTags;
 use Illuminate\Database\Eloquent\Relationships\BelongsToMany;
+use Spatie\Tags\HasTags;
 
 class Course extends Model implements Viewable
 {
@@ -26,7 +26,7 @@ class Course extends Model implements Viewable
     public function authors()//: BelongsToMany
     {
         return $this->belongsToMany(User::class, 'course_author', 'course_id', 'user_id');
-            // ->withTimestamps();
+        // ->withTimestamps();
     }
 
     public function topic()

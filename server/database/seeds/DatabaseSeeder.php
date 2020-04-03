@@ -1,7 +1,5 @@
 <?php
 
-use Domain\Course\Models\Course;
-
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
