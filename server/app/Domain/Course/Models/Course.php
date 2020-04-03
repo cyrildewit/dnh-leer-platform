@@ -6,7 +6,7 @@ use CyrildeWit\EloquentViewable\Contracts\Viewable;
 use CyrildeWit\EloquentViewable\InteractsWithViews;
 use CyrildeWit\EloquentViewable\Support\Period;
 use Domain\Model;
-use Domain\Topci\Models\Topic;
+use Domain\Topic\Models\Topic;
 use Domain\User\Models\User;
 use Illuminate\Database\Eloquent\Relationships\BelongsToMany;
 
@@ -21,15 +21,15 @@ class Course extends Model implements Viewable
         'target_audience' => 'array',
     ];
 
-    public function authors(): BelongsToMany
+    public function authors()//: BelongsToMany
     {
-        return $this->belongsToMany(User::class, 'course_author', 'course_id', 'user_id')
-            ->withTimestamps();
+        return $this->belongsToMany(User::class, 'course_author', 'course_id', 'user_id');
+            // ->withTimestamps();
     }
 
-    public function topics()
+    public function topic()
     {
-        return $this->belongsTo(Topic::class)->withTimestamps();
+        return $this->belongsTo(Topic::class);
     }
 
     public function getUniqueViewsCount()

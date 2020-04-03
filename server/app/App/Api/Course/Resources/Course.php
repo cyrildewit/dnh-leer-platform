@@ -2,6 +2,8 @@
 
 namespace App\Api\Course\Resources;
 
+use App\Api\User\Resources\UserCollection;
+use App\Api\Topic\Resources\Topic;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class Course extends JsonResource
@@ -28,7 +30,8 @@ class Course extends JsonResource
             'estimated_duration' => $this->estimated_duration,
             'unique_views_count'  => $this->getUniqueViewsCount(),
             'published_at'        => $this->published_at,
-            'authors' => new UserCollection($this->courses),
+            'authors' =>            new UserCollection($this->whenLoaded('authors')),
+            'topic' =>                 new Topic($this->whenLoaded('topic')),
             'created_at'          => $this->created_at,
             'updated_at'          => $this->updated_at,
         ];

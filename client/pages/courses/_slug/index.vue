@@ -53,10 +53,11 @@
 
           <div class="w-4/12 px-4">
             <div class="pb-4">
-              <h2 class="font-medium text-lg">Instructeurs</h2>
+              <h2 class="font-medium text-lg mb-2">Instructeurs</h2>
 
-              <div>
+              <div v-for="author in course.authors" :key="author.id" class="flex items-center border rounded shadow p-2">
                 <img class="w-10 h-10 rounded-full" src="https://via.placeholder.com/50x50.png">
+                <h4 class="ml-2 font-medium">{{ author.name }}</h4>
               </div>
             </div>
 
@@ -64,8 +65,16 @@
               <h2 class="font-medium text-lg">Omschrijving</h2>
 
               <ul>
-                <li></li>
+                <li><strong class="text-gray-700">Niveau:</strong> {{ course.level }}</li>
+                <li><strong class="text-gray-700">Studieduur: </strong> {{ course.estimated_duration }} uur</li>
+                <li><strong class="text-gray-700">Taal:</strong> {{ course.language }}</li>
+                <li><strong class="text-gray-700">Onderwerp:</strong> {{ course.topic.display_name }}</li>
+                <li><strong class="text-gray-700">Unieke weergaven:</strong> {{ course.unique_views_count }} x bekeken</li>
               </ul>
+            </div>
+
+            <div class="flex mt-4">
+              <a class="border rounded px-3 py-1 text-sm" v-for="tag in course.tags" :key="tag.id">{{ tag. }}</a>
             </div>
           </div>
         </div>

@@ -27,7 +27,7 @@ class DatabaseSeeder extends Seeder
 
         $this->call(TopicsTableSeeder::class);
 
-        Course::create([
+        $course = Course::create([
             'topic_id' => 5,
             'slug' => 'masterclass-php',
             'title' => 'Masterclass PHP',
@@ -44,5 +44,7 @@ class DatabaseSeeder extends Seeder
             'estimated_duration' => 12,
             'published_at'        => now(),
         ]);
+
+        $course->authors()->attach($cyril);
     }
 }
