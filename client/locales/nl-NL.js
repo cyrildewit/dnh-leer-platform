@@ -32,6 +32,8 @@ export default {
   },
 
   topicsPage: {
+    title: 'Onderwerpen',
+    subtitle: 'Overzicht van alle onderwerpen',
     noCoursesFoundForTopic: 'Er zijn geen cursussen gevonden voor het onderwerp {topic}.',
   },
 

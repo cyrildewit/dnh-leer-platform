@@ -32,6 +32,8 @@ export default {
   },
 
   topicsPage: {
+    title: 'Topics',
+    subtitle: 'Overview of all topics',
     noCoursesFoundForTopic: 'No courses were found for topic  {topic}.',
   },
 

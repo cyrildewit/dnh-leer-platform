@@ -83,7 +83,7 @@ export const actions = {
     try {
       const { data } = await axios.get('http://dnh-leer-platform.test/api/v1/courses/getBySlug/' + slug)
 
-      commit(SET_CURRENT_COURSE, { courses: data.data })
+      commit(SET_CURRENT_COURSE, { course: data.data })
     } catch (e) {
       commit(REMOVE_CURRENT_COURSE)
     }
