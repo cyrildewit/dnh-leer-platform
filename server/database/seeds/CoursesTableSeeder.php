@@ -1,7 +1,7 @@
 <?php
 
-use Domain\Course\Models\Course;
 use Domain\Course\Models\Chapter;
+use Domain\Course\Models\Course;
 use Domain\Course\Models\Section;
 use Domain\Topic\Models\Topic;
 use Illuminate\Database\Seeder;
@@ -17,7 +17,7 @@ class CoursesTableSeeder extends Seeder
     public function run()
     {
         /**
-         * SVG Gevorderde Cursus
+         * SVG Gevorderde Cursus.
          */
         $course = new Course();
         $course->slug = 'svg-gevorderde-cursus';
@@ -69,20 +69,20 @@ class CoursesTableSeeder extends Seeder
         $course_chapter->status = true;
         $course->chapters()->save($course_chapter);
 
-            $course_chapter_section = new Section();
-            $course_chapter_section->slug = 'cursus-introductie-en-overzicht';
-            $course_chapter_section->title = 'Cursus Introductie & Overzicht';
-            $course_chapter_section->content_type = 'plain_html_db';
-            $course_chapter_section->content = '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pretium velit leo, vitae congue nisi ullamcorper et. Aenean vitae orci eleifend, efficitur ante at, posuere ex. Donec laoreet pharetra molestie. Suspendisse lacinia vehicula nisi, id congue nibh porta at. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Morbi eu tempus est. Phasellus sed justo sodales, ornare nisl sed, viverra dolor. Suspendisse eget mi auctor elit vestibulum volutpat. Curabitur auctor dictum est, ac efficitur sem. Maecenas et faucibus turpis, nec tempor mauris. Praesent sagittis dapibus neque ut aliquam. Nam dapibus, arcu sit amet laoreet eleifend, enim ante euismod diam, at lacinia enim leo et sem. Donec quam eros, dignissim vel vestibulum eu, elementum et dolor. Aliquam hendrerit tellus sit amet ante molestie fermentum. Nulla et sem vitae augue finibus fringilla vitae vel ligula. Maecenas leo quam, molestie tincidunt condimentum quis, sodales ac massa.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pretium velit leo, vitae congue nisi ullamcorper et. Aenean vitae orci eleifend, efficitur ante at, posuere ex. Donec laoreet pharetra molestie. Suspendisse lacinia vehicula nisi, id congue nibh porta at. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Morbi eu tempus est. Phasellus sed justo sodales, ornare nisl sed, viverra dolor. Suspendisse eget mi auctor elit vestibulum volutpat. Curabitur auctor dictum est, ac efficitur sem. Maecenas et faucibus turpis, nec tempor mauris. Praesent sagittis dapibus neque ut aliquam. Nam dapibus, arcu sit amet laoreet eleifend, enim ante euismod diam, at lacinia enim leo et sem. Donec quam eros, dignissim vel vestibulum eu, elementum et dolor. Aliquam hendrerit tellus sit amet ante molestie fermentum. Nulla et sem vitae augue finibus fringilla vitae vel ligula. Maecenas leo quam, molestie tincidunt condimentum quis, sodales ac massa.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pretium velit leo, vitae congue nisi ullamcorper et. Aenean vitae orci eleifend, efficitur ante at, posuere ex. Donec laoreet pharetra molestie. Suspendisse lacinia vehicula nisi, id congue nibh porta at. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Morbi eu tempus est. Phasellus sed justo sodales, ornare nisl sed, viverra dolor. Suspendisse eget mi auctor elit vestibulum volutpat. Curabitur auctor dictum est, ac efficitur sem. Maecenas et faucibus turpis, nec tempor mauris. Praesent sagittis dapibus neque ut aliquam. Nam dapibus, arcu sit amet laoreet eleifend, enim ante euismod diam, at lacinia enim leo et sem. Donec quam eros, dignissim vel vestibulum eu, elementum et dolor. Aliquam hendrerit tellus sit amet ante molestie fermentum. Nulla et sem vitae augue finibus fringilla vitae vel ligula. Maecenas leo quam, molestie tincidunt condimentum quis, sodales ac massa.</p>';
-            $course_chapter_section->draft = false;
-            $course_chapter_section->status = true;
-            $course_chapter->sections()->save($course_chapter_section);
+        $course_chapter_section = new Section();
+        $course_chapter_section->slug = 'cursus-introductie-en-overzicht';
+        $course_chapter_section->title = 'Cursus Introductie & Overzicht';
+        $course_chapter_section->content_type = 'plain_html_db';
+        $course_chapter_section->content = '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pretium velit leo, vitae congue nisi ullamcorper et. Aenean vitae orci eleifend, efficitur ante at, posuere ex. Donec laoreet pharetra molestie. Suspendisse lacinia vehicula nisi, id congue nibh porta at. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Morbi eu tempus est. Phasellus sed justo sodales, ornare nisl sed, viverra dolor. Suspendisse eget mi auctor elit vestibulum volutpat. Curabitur auctor dictum est, ac efficitur sem. Maecenas et faucibus turpis, nec tempor mauris. Praesent sagittis dapibus neque ut aliquam. Nam dapibus, arcu sit amet laoreet eleifend, enim ante euismod diam, at lacinia enim leo et sem. Donec quam eros, dignissim vel vestibulum eu, elementum et dolor. Aliquam hendrerit tellus sit amet ante molestie fermentum. Nulla et sem vitae augue finibus fringilla vitae vel ligula. Maecenas leo quam, molestie tincidunt condimentum quis, sodales ac massa.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pretium velit leo, vitae congue nisi ullamcorper et. Aenean vitae orci eleifend, efficitur ante at, posuere ex. Donec laoreet pharetra molestie. Suspendisse lacinia vehicula nisi, id congue nibh porta at. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Morbi eu tempus est. Phasellus sed justo sodales, ornare nisl sed, viverra dolor. Suspendisse eget mi auctor elit vestibulum volutpat. Curabitur auctor dictum est, ac efficitur sem. Maecenas et faucibus turpis, nec tempor mauris. Praesent sagittis dapibus neque ut aliquam. Nam dapibus, arcu sit amet laoreet eleifend, enim ante euismod diam, at lacinia enim leo et sem. Donec quam eros, dignissim vel vestibulum eu, elementum et dolor. Aliquam hendrerit tellus sit amet ante molestie fermentum. Nulla et sem vitae augue finibus fringilla vitae vel ligula. Maecenas leo quam, molestie tincidunt condimentum quis, sodales ac massa.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pretium velit leo, vitae congue nisi ullamcorper et. Aenean vitae orci eleifend, efficitur ante at, posuere ex. Donec laoreet pharetra molestie. Suspendisse lacinia vehicula nisi, id congue nibh porta at. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Morbi eu tempus est. Phasellus sed justo sodales, ornare nisl sed, viverra dolor. Suspendisse eget mi auctor elit vestibulum volutpat. Curabitur auctor dictum est, ac efficitur sem. Maecenas et faucibus turpis, nec tempor mauris. Praesent sagittis dapibus neque ut aliquam. Nam dapibus, arcu sit amet laoreet eleifend, enim ante euismod diam, at lacinia enim leo et sem. Donec quam eros, dignissim vel vestibulum eu, elementum et dolor. Aliquam hendrerit tellus sit amet ante molestie fermentum. Nulla et sem vitae augue finibus fringilla vitae vel ligula. Maecenas leo quam, molestie tincidunt condimentum quis, sodales ac massa.</p>';
+        $course_chapter_section->draft = false;
+        $course_chapter_section->status = true;
+        $course_chapter->sections()->save($course_chapter_section);
 
-            $course_chapter_section = new Section();
-            $course_chapter_section->slug = 'create-a-custom-slack-slash-command-with-node.js-and-express';
-            $course_chapter_section->title = 'Create a custom Slack slash command with Node.js and Express';
-            $course_chapter_section->content_type = 'plain_html_db';
-            $course_chapter_section->content = '<p>In this tutorial we are going to learn how to build and deploy a custom Slack slash command using Node.js and the Express web framework.</p>
+        $course_chapter_section = new Section();
+        $course_chapter_section->slug = 'create-a-custom-slack-slash-command-with-node.js-and-express';
+        $course_chapter_section->title = 'Create a custom Slack slash command with Node.js and Express';
+        $course_chapter_section->content_type = 'plain_html_db';
+        $course_chapter_section->content = '<p>In this tutorial we are going to learn how to build and deploy a custom Slack slash command using Node.js and the Express web framework.</p>
             <p>If you are interested in creating Slack integrations with Node.js, you might also be interested in a previous article that illustrates how to build a Slack bot with Node.js.</p>
             <h2>Slack "slash commands"... Wait, what?</h2>
             <p>Slash commands are special messages that begin with a slash (/) and behave differently from regular chat messages. For example, you can use the /feed command to subscribe the current channel to an RSS feed and receive notifications directly into Slack everytime a new article is published into that feed.</p>
@@ -91,9 +91,9 @@ class CoursesTableSeeder extends Seeder
             <h2>Building a URL shortener slash command</h2>
             <p>In this tutorial we are going to build a "URL shortener" slash command, which will allow us to generate personalised short urls with a versatile syntax. For example, we want the following command to generate the shorturl http://loige.link/rome17.</p>
             <p>We are going to use Rebrandly as Short URL service. If you don\'t know this service I totally recommend you, essentially for 3 reasons</p>';
-            $course_chapter_section->draft = false;
-            $course_chapter_section->status = true;
-            $course_chapter->sections()->save($course_chapter_section);
+        $course_chapter_section->draft = false;
+        $course_chapter_section->status = true;
+        $course_chapter->sections()->save($course_chapter_section);
 
         $course_chapter = new Chapter();
         $course_chapter->slug = 'workflow-setup-en-tools-voor-cursus-project';
@@ -103,27 +103,26 @@ class CoursesTableSeeder extends Seeder
         $course_chapter->status = true;
         $course->chapters()->save($course_chapter);
 
-            $course_chapter_section = new Section();
-            $course_chapter_section->slug = 'maak-een-svg-en-krijg-toegang-tot-de-code';
-            $course_chapter_section->title = 'Maak een SVG en krijg toegang tot de code';
-            $course_chapter_section->content_type = 'plain_html_db';
-            $course_chapter_section->content = '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pretium velit leo, vitae congue nisi ullamcorper et. Aenean vitae orci eleifend, efficitur ante at, posuere ex. Donec laoreet pharetra molestie. Suspendisse lacinia vehicula nisi, id congue nibh porta at. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Morbi eu tempus est. Phasellus sed justo sodales, ornare nisl sed, viverra dolor. Suspendisse eget mi auctor elit vestibulum volutpat. Curabitur auctor dictum est, ac efficitur sem. Maecenas et faucibus turpis, nec tempor mauris. Praesent sagittis dapibus neque ut aliquam. Nam dapibus, arcu sit amet laoreet eleifend, enim ante euismod diam, at lacinia enim leo et sem. Donec quam eros, dignissim vel vestibulum eu, elementum et dolor. Aliquam hendrerit tellus sit amet ante molestie fermentum. Nulla et sem vitae augue finibus fringilla vitae vel ligula. Maecenas leo quam, molestie tincidunt condimentum quis, sodales ac massa.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pretium velit leo, vitae congue nisi ullamcorper et. Aenean vitae orci eleifend, efficitur ante at, posuere ex. Donec laoreet pharetra molestie. Suspendisse lacinia vehicula nisi, id congue nibh porta at. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Morbi eu tempus est. Phasellus sed justo sodales, ornare nisl sed, viverra dolor. Suspendisse eget mi auctor elit vestibulum volutpat. Curabitur auctor dictum est, ac efficitur sem. Maecenas et faucibus turpis, nec tempor mauris. Praesent sagittis dapibus neque ut aliquam. Nam dapibus, arcu sit amet laoreet eleifend, enim ante euismod diam, at lacinia enim leo et sem. Donec quam eros, dignissim vel vestibulum eu, elementum et dolor. Aliquam hendrerit tellus sit amet ante molestie fermentum. Nulla et sem vitae augue finibus fringilla vitae vel ligula. Maecenas leo quam, molestie tincidunt condimentum quis, sodales ac massa.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pretium velit leo, vitae congue nisi ullamcorper et. Aenean vitae orci eleifend, efficitur ante at, posuere ex. Donec laoreet pharetra molestie. Suspendisse lacinia vehicula nisi, id congue nibh porta at. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Morbi eu tempus est. Phasellus sed justo sodales, ornare nisl sed, viverra dolor. Suspendisse eget mi auctor elit vestibulum volutpat. Curabitur auctor dictum est, ac efficitur sem. Maecenas et faucibus turpis, nec tempor mauris. Praesent sagittis dapibus neque ut aliquam. Nam dapibus, arcu sit amet laoreet eleifend, enim ante euismod diam, at lacinia enim leo et sem. Donec quam eros, dignissim vel vestibulum eu, elementum et dolor. Aliquam hendrerit tellus sit amet ante molestie fermentum. Nulla et sem vitae augue finibus fringilla vitae vel ligula. Maecenas leo quam, molestie tincidunt condimentum quis, sodales ac massa.</p>';
-            $course_chapter_section->draft = false;
-            $course_chapter_section->status = true;
-            $course_chapter->sections()->save($course_chapter_section);
+        $course_chapter_section = new Section();
+        $course_chapter_section->slug = 'maak-een-svg-en-krijg-toegang-tot-de-code';
+        $course_chapter_section->title = 'Maak een SVG en krijg toegang tot de code';
+        $course_chapter_section->content_type = 'plain_html_db';
+        $course_chapter_section->content = '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pretium velit leo, vitae congue nisi ullamcorper et. Aenean vitae orci eleifend, efficitur ante at, posuere ex. Donec laoreet pharetra molestie. Suspendisse lacinia vehicula nisi, id congue nibh porta at. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Morbi eu tempus est. Phasellus sed justo sodales, ornare nisl sed, viverra dolor. Suspendisse eget mi auctor elit vestibulum volutpat. Curabitur auctor dictum est, ac efficitur sem. Maecenas et faucibus turpis, nec tempor mauris. Praesent sagittis dapibus neque ut aliquam. Nam dapibus, arcu sit amet laoreet eleifend, enim ante euismod diam, at lacinia enim leo et sem. Donec quam eros, dignissim vel vestibulum eu, elementum et dolor. Aliquam hendrerit tellus sit amet ante molestie fermentum. Nulla et sem vitae augue finibus fringilla vitae vel ligula. Maecenas leo quam, molestie tincidunt condimentum quis, sodales ac massa.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pretium velit leo, vitae congue nisi ullamcorper et. Aenean vitae orci eleifend, efficitur ante at, posuere ex. Donec laoreet pharetra molestie. Suspendisse lacinia vehicula nisi, id congue nibh porta at. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Morbi eu tempus est. Phasellus sed justo sodales, ornare nisl sed, viverra dolor. Suspendisse eget mi auctor elit vestibulum volutpat. Curabitur auctor dictum est, ac efficitur sem. Maecenas et faucibus turpis, nec tempor mauris. Praesent sagittis dapibus neque ut aliquam. Nam dapibus, arcu sit amet laoreet eleifend, enim ante euismod diam, at lacinia enim leo et sem. Donec quam eros, dignissim vel vestibulum eu, elementum et dolor. Aliquam hendrerit tellus sit amet ante molestie fermentum. Nulla et sem vitae augue finibus fringilla vitae vel ligula. Maecenas leo quam, molestie tincidunt condimentum quis, sodales ac massa.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pretium velit leo, vitae congue nisi ullamcorper et. Aenean vitae orci eleifend, efficitur ante at, posuere ex. Donec laoreet pharetra molestie. Suspendisse lacinia vehicula nisi, id congue nibh porta at. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Morbi eu tempus est. Phasellus sed justo sodales, ornare nisl sed, viverra dolor. Suspendisse eget mi auctor elit vestibulum volutpat. Curabitur auctor dictum est, ac efficitur sem. Maecenas et faucibus turpis, nec tempor mauris. Praesent sagittis dapibus neque ut aliquam. Nam dapibus, arcu sit amet laoreet eleifend, enim ante euismod diam, at lacinia enim leo et sem. Donec quam eros, dignissim vel vestibulum eu, elementum et dolor. Aliquam hendrerit tellus sit amet ante molestie fermentum. Nulla et sem vitae augue finibus fringilla vitae vel ligula. Maecenas leo quam, molestie tincidunt condimentum quis, sodales ac massa.</p>';
+        $course_chapter_section->draft = false;
+        $course_chapter_section->status = true;
+        $course_chapter->sections()->save($course_chapter_section);
 
-            $course_chapter_section = new Section();
-            $course_chapter_section->slug = 'code-optimaliseren-met-omgsvg';
-            $course_chapter_section->title = 'Code optimaliseren met OMGSVG';
-            $course_chapter_section->content_type = 'plain_html_db';
-            $course_chapter_section->content = '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pretium velit leo, vitae congue nisi ullamcorper et. Aenean vitae orci eleifend, efficitur ante at, posuere ex. Donec laoreet pharetra molestie. Suspendisse lacinia vehicula nisi, id congue nibh porta at. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Morbi eu tempus est. Phasellus sed justo sodales, ornare nisl sed, viverra dolor. Suspendisse eget mi auctor elit vestibulum volutpat. Curabitur auctor dictum est, ac efficitur sem. Maecenas et faucibus turpis, nec tempor mauris. Praesent sagittis dapibus neque ut aliquam. Nam dapibus, arcu sit amet laoreet eleifend, enim ante euismod diam, at lacinia enim leo et sem. Donec quam eros, dignissim vel vestibulum eu, elementum et dolor. Aliquam hendrerit tellus sit amet ante molestie fermentum. Nulla et sem vitae augue finibus fringilla vitae vel ligula. Maecenas leo quam, molestie tincidunt condimentum quis, sodales ac massa.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pretium velit leo, vitae congue nisi ullamcorper et. Aenean vitae orci eleifend, efficitur ante at, posuere ex. Donec laoreet pharetra molestie. Suspendisse lacinia vehicula nisi, id congue nibh porta at. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Morbi eu tempus est. Phasellus sed justo sodales, ornare nisl sed, viverra dolor. Suspendisse eget mi auctor elit vestibulum volutpat. Curabitur auctor dictum est, ac efficitur sem. Maecenas et faucibus turpis, nec tempor mauris. Praesent sagittis dapibus neque ut aliquam. Nam dapibus, arcu sit amet laoreet eleifend, enim ante euismod diam, at lacinia enim leo et sem. Donec quam eros, dignissim vel vestibulum eu, elementum et dolor. Aliquam hendrerit tellus sit amet ante molestie fermentum. Nulla et sem vitae augue finibus fringilla vitae vel ligula. Maecenas leo quam, molestie tincidunt condimentum quis, sodales ac massa.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pretium velit leo, vitae congue nisi ullamcorper et. Aenean vitae orci eleifend, efficitur ante at, posuere ex. Donec laoreet pharetra molestie. Suspendisse lacinia vehicula nisi, id congue nibh porta at. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Morbi eu tempus est. Phasellus sed justo sodales, ornare nisl sed, viverra dolor. Suspendisse eget mi auctor elit vestibulum volutpat. Curabitur auctor dictum est, ac efficitur sem. Maecenas et faucibus turpis, nec tempor mauris. Praesent sagittis dapibus neque ut aliquam. Nam dapibus, arcu sit amet laoreet eleifend, enim ante euismod diam, at lacinia enim leo et sem. Donec quam eros, dignissim vel vestibulum eu, elementum et dolor. Aliquam hendrerit tellus sit amet ante molestie fermentum. Nulla et sem vitae augue finibus fringilla vitae vel ligula. Maecenas leo quam, molestie tincidunt condimentum quis, sodales ac massa.</p>';
-            $course_chapter_section->draft = false;
-            $course_chapter_section->status = true;
-            $course_chapter->sections()->save($course_chapter_section);
-
+        $course_chapter_section = new Section();
+        $course_chapter_section->slug = 'code-optimaliseren-met-omgsvg';
+        $course_chapter_section->title = 'Code optimaliseren met OMGSVG';
+        $course_chapter_section->content_type = 'plain_html_db';
+        $course_chapter_section->content = '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pretium velit leo, vitae congue nisi ullamcorper et. Aenean vitae orci eleifend, efficitur ante at, posuere ex. Donec laoreet pharetra molestie. Suspendisse lacinia vehicula nisi, id congue nibh porta at. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Morbi eu tempus est. Phasellus sed justo sodales, ornare nisl sed, viverra dolor. Suspendisse eget mi auctor elit vestibulum volutpat. Curabitur auctor dictum est, ac efficitur sem. Maecenas et faucibus turpis, nec tempor mauris. Praesent sagittis dapibus neque ut aliquam. Nam dapibus, arcu sit amet laoreet eleifend, enim ante euismod diam, at lacinia enim leo et sem. Donec quam eros, dignissim vel vestibulum eu, elementum et dolor. Aliquam hendrerit tellus sit amet ante molestie fermentum. Nulla et sem vitae augue finibus fringilla vitae vel ligula. Maecenas leo quam, molestie tincidunt condimentum quis, sodales ac massa.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pretium velit leo, vitae congue nisi ullamcorper et. Aenean vitae orci eleifend, efficitur ante at, posuere ex. Donec laoreet pharetra molestie. Suspendisse lacinia vehicula nisi, id congue nibh porta at. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Morbi eu tempus est. Phasellus sed justo sodales, ornare nisl sed, viverra dolor. Suspendisse eget mi auctor elit vestibulum volutpat. Curabitur auctor dictum est, ac efficitur sem. Maecenas et faucibus turpis, nec tempor mauris. Praesent sagittis dapibus neque ut aliquam. Nam dapibus, arcu sit amet laoreet eleifend, enim ante euismod diam, at lacinia enim leo et sem. Donec quam eros, dignissim vel vestibulum eu, elementum et dolor. Aliquam hendrerit tellus sit amet ante molestie fermentum. Nulla et sem vitae augue finibus fringilla vitae vel ligula. Maecenas leo quam, molestie tincidunt condimentum quis, sodales ac massa.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pretium velit leo, vitae congue nisi ullamcorper et. Aenean vitae orci eleifend, efficitur ante at, posuere ex. Donec laoreet pharetra molestie. Suspendisse lacinia vehicula nisi, id congue nibh porta at. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Morbi eu tempus est. Phasellus sed justo sodales, ornare nisl sed, viverra dolor. Suspendisse eget mi auctor elit vestibulum volutpat. Curabitur auctor dictum est, ac efficitur sem. Maecenas et faucibus turpis, nec tempor mauris. Praesent sagittis dapibus neque ut aliquam. Nam dapibus, arcu sit amet laoreet eleifend, enim ante euismod diam, at lacinia enim leo et sem. Donec quam eros, dignissim vel vestibulum eu, elementum et dolor. Aliquam hendrerit tellus sit amet ante molestie fermentum. Nulla et sem vitae augue finibus fringilla vitae vel ligula. Maecenas leo quam, molestie tincidunt condimentum quis, sodales ac massa.</p>';
+        $course_chapter_section->draft = false;
+        $course_chapter_section->status = true;
+        $course_chapter->sections()->save($course_chapter_section);
 
         /**
-         * PHP Beginnser Cursus
+         * PHP Beginnser Cursus.
          */
         $course = new Course();
         $course->slug = 'php-beginners-cursus';
@@ -175,26 +174,26 @@ class CoursesTableSeeder extends Seeder
         $course_chapter->status = true;
         $course->chapters()->save($course_chapter);
 
-            $course_chapter_section = new Section();
-            $course_chapter_section->slug = 'wat-is-php';
-            $course_chapter_section->title = 'Paragraaf 1 - Wat is PHP?';
-            $course_chapter_section->draft = false;
-            $course_chapter_section->status = true;
-            $course_chapter->sections()->save($course_chapter_section);
+        $course_chapter_section = new Section();
+        $course_chapter_section->slug = 'wat-is-php';
+        $course_chapter_section->title = 'Paragraaf 1 - Wat is PHP?';
+        $course_chapter_section->draft = false;
+        $course_chapter_section->status = true;
+        $course_chapter->sections()->save($course_chapter_section);
 
-            $course_chapter_section = new Section();
-            $course_chapter_section->slug = 'hoe-installeer-je-php';
-            $course_chapter_section->title = 'Paragraaf 2 - Hoe installeer je PHP';
-            $course_chapter_section->draft = false;
-            $course_chapter_section->status = true;
-            $course_chapter->sections()->save($course_chapter_section);
+        $course_chapter_section = new Section();
+        $course_chapter_section->slug = 'hoe-installeer-je-php';
+        $course_chapter_section->title = 'Paragraaf 2 - Hoe installeer je PHP';
+        $course_chapter_section->draft = false;
+        $course_chapter_section->status = true;
+        $course_chapter->sections()->save($course_chapter_section);
 
-            $course_chapter_section = new Section();
-            $course_chapter_section->slug = 'wampp';
-            $course_chapter_section->title = 'Paragraaf 2 - Wampp';
-            $course_chapter_section->draft = false;
-            $course_chapter_section->status = true;
-            $course_chapter->sections()->save($course_chapter_section);
+        $course_chapter_section = new Section();
+        $course_chapter_section->slug = 'wampp';
+        $course_chapter_section->title = 'Paragraaf 2 - Wampp';
+        $course_chapter_section->draft = false;
+        $course_chapter_section->status = true;
+        $course_chapter->sections()->save($course_chapter_section);
 
         $course_chapter = new Chapter();
         $course_chapter->title = 'Hoofdstuk 2 - Variabelen PHP';
@@ -204,19 +203,19 @@ class CoursesTableSeeder extends Seeder
         $course_chapter->status = true;
         $course->chapters()->save($course_chapter);
 
-            $course_chapter_section = new Section();
-            $course_chapter_section->slug = 'variabelen';
-            $course_chapter_section->title = 'Paragraaf 1 - Variabelen';
-            $course_chapter_section->draft = false;
-            $course_chapter_section->status = true;
-            $course_chapter->sections()->save($course_chapter_section);
+        $course_chapter_section = new Section();
+        $course_chapter_section->slug = 'variabelen';
+        $course_chapter_section->title = 'Paragraaf 1 - Variabelen';
+        $course_chapter_section->draft = false;
+        $course_chapter_section->status = true;
+        $course_chapter->sections()->save($course_chapter_section);
 
-            $course_chapter_section = new Section();
-            $course_chapter_section->slug = 'parameters';
-            $course_chapter_section->title = 'Paragraaf 2 - Parameters';
-            $course_chapter_section->draft = false;
-            $course_chapter_section->status = true;
-            $course_chapter->sections()->save($course_chapter_section);
+        $course_chapter_section = new Section();
+        $course_chapter_section->slug = 'parameters';
+        $course_chapter_section->title = 'Paragraaf 2 - Parameters';
+        $course_chapter_section->draft = false;
+        $course_chapter_section->status = true;
+        $course_chapter->sections()->save($course_chapter_section);
 
         $course_chapter = new Chapter();
         $course_chapter->slug = 'functies-php';
@@ -226,18 +225,18 @@ class CoursesTableSeeder extends Seeder
         $course_chapter->status = true;
         $course->chapters()->save($course_chapter);
 
-            $course_chapter_section = new Section();
-            $course_chapter_section->slug = 'aanroeping-van-een-functie';
-            $course_chapter_section->title = 'Paragraaf 1 - Aanroeping van een functie';
-            $course_chapter_section->draft = false;
-            $course_chapter_section->status = true;
-            $course_chapter->sections()->save($course_chapter_section);
+        $course_chapter_section = new Section();
+        $course_chapter_section->slug = 'aanroeping-van-een-functie';
+        $course_chapter_section->title = 'Paragraaf 1 - Aanroeping van een functie';
+        $course_chapter_section->draft = false;
+        $course_chapter_section->status = true;
+        $course_chapter->sections()->save($course_chapter_section);
 
-            $course_chapter_section = new Section();
-            $course_chapter_section->slug = 'functie-maken';
-            $course_chapter_section->title = 'Paragraaf 2 - Functie maken';
-            $course_chapter_section->draft = false;
-            $course_chapter_section->status = true;
-            $course_chapter->sections()->save($course_chapter_section);
+        $course_chapter_section = new Section();
+        $course_chapter_section->slug = 'functie-maken';
+        $course_chapter_section->title = 'Paragraaf 2 - Functie maken';
+        $course_chapter_section->draft = false;
+        $course_chapter_section->status = true;
+        $course_chapter->sections()->save($course_chapter_section);
     }
 }

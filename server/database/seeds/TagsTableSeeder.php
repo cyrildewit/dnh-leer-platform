@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Database\Seeder;
-
 use Spatie\Tags\Tag;
 
 class TagsTableSeeder extends Seeder
