@@ -20,7 +20,7 @@
 
           <div class="w-4/12 px-2 flex items-center justify-end">
 
-            <button v-if="$auth.loggedIn" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow ">
+            <button v-if="$auth.loggedIn" @click="enroll" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow ">
               Inschrijven
             </button>
 
@@ -118,6 +118,12 @@ export default {
     ...mapGetters({
       course: 'courses/currentCourse',
     }),
+  },
+
+  methods: {
+    enroll() {
+      this.$axios.post('http://dnh-leer-platform.test/api/v1/courses/'+ this.course.id +'/enroll')
+    },
   },
 
   mounted() {
