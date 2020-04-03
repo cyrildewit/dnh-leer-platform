@@ -34,6 +34,11 @@ class Course extends Model implements Viewable
         return $this->belongsTo(Topic::class);
     }
 
+    public function chapters()
+    {
+        return $this->belongsToMany(Chapter::class, 'course_chapter', 'course_id', 'chapter_id');
+    }
+
     public function getUniqueViewsCount()
     {
         return views($this)

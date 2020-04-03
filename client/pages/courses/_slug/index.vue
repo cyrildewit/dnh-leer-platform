@@ -56,7 +56,7 @@
               <h2 class="font-medium text-lg mb-2">Instructeurs</h2>
 
               <div v-for="author in course.authors" :key="author.id" class="flex items-center border rounded shadow p-3">
-                <img class="w-10 h-10 rounded-full" src="https://via.placeholder.com/50x50.png">
+                <img class="w-10 h-10 rounded-full" :src="author.avatar">
                 <h4 class="ml-2 font-medium">{{ author.name }}</h4>
               </div>
             </div>
@@ -67,15 +67,35 @@
               <ul class="border shadow rounded p-3">
                 <li><strong class="text-gray-700">Niveau:</strong> {{ course.level }}</li>
                 <li><strong class="text-gray-700">Studieduur: </strong> {{ course.estimated_duration }} uur</li>
-                <li><strong class="text-gray-700">Taal:</strong> {{ course.language }}</li>
+                <li><strong class="text-gray-700">Taal:</strong> {{ course.language.toUpperCase() }}</li>
                 <li><strong class="text-gray-700">Onderwerp:</strong> {{ course.topic.display_name }}</li>
                 <li><strong class="text-gray-700">Unieke weergaven:</strong> {{ course.unique_views_count + 1 }}x bekeken</li>
               </ul>
             </div>
 
-            <div class="flex">
-              <a class="border rounded px-3 py-1 text-sm" v-for="tag in course.tags" :key="tag.id">{{ tag.name.en }}</a>
+            <div>
+              <h2 class="font-medium text-lg mb-2">Labels</h2>
+
+              <div>
+                <a class="border rounded px-3 py-1 text-sm mr-2" v-for="tag in course.tags" :key="tag.id">{{ tag.name.en }}</a>
+              </div>
             </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="container mx-auto px-6">
+
+      <div class="mt-6 max-w-2xl mx-auto">
+        <h2 class="font-medium text-2xl text-center mb-6">Curriculum van deze cursus</h2>
+
+        <div>
+          <div v-for="chapter in course.chapters" :key="chapter.id" class="border shadow rounded px-6 py-4 mb-4">
+            <h3 class="font-medium text-xl mb-2">{{ chapter.title }}</h3>
+            <p class="mb-1" v-for="section in chapter.sections" :key="section.id">{{ section.title }}</p>
           </div>
         </div>
 
