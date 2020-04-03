@@ -25,8 +25,10 @@ class Course extends JsonResource
             'learning_points'     => $this->learning_points,
             'target_audience'     => $this->target_audience,
             'level'               => $this->level,
+            'estimated_duration' => $this->estimated_duration,
             'unique_views_count'  => $this->getUniqueViewsCount(),
             'published_at'        => $this->published_at,
+            'authors' => new UserCollection($this->courses),
             'created_at'          => $this->created_at,
             'updated_at'          => $this->updated_at,
         ];

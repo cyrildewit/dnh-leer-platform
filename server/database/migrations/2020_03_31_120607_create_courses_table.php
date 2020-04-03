@@ -33,6 +33,7 @@ class CreateCoursesTable extends Migration
 
             // Course meta
             $table->string('level')->nullable();
+            $table->integer('estimated_duration')->nullable();
             $table->date('published_at')->nullable();
 
             $table->timestamps();

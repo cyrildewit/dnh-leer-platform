@@ -1,18 +1,73 @@
 <template>
   <div v-if="course">
 
-    <!-- <div class="py-12 bg-gray-100 text-center border-b border-gray-300">
+    <div class="py-8 bg-gray-100 border-b border-gray-300">
       <div class="container mx-auto px-6">
-        <h1 class="text-2xl mb-2">Welkom op het Leer Platform</h1>
-        <p class="text-lg">Leer, ontdek en ontwikkel jouw talent</p>
+
+        <div class="flex -mx-2">
+          <div class="w-8/12 px-2 flex">
+            <div class="rounded overflow-hidden">
+              <img src="https://via.placeholder.com/300x200.png" style="max-height: 120px;" alt="">
+            </div>
+
+            <div class="ml-4 flex items-center">
+              <div>
+                <h1 class="text-2xl mb-2">{{ course.title }}</h1>
+                <p class="text-base">{{ course.headline }}</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="w-4/12 px-2 flex items-center justify-end">
+
+            <button v-if="$auth.loggedIn" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow ">
+              Inschrijven
+            </button>
+
+            <button v-else class="bg-gray-200 text-gray-600 font-semibold py-2 px-4 border border-gray-400 rounded shadow" title="Maak een account aan om in te schrijven!">
+              Inschrijven
+            </button>
+
+          </div>
+        </div>
+
       </div>
-    </div> -->
+    </div>
 
     <div class="container mx-auto px-6">
-      <div class="py-12">
+      <div class="py-6">
 
-        <div class="mb-4 pb-3 border-b border-gray-400">
-          <h2 class="font-medium text-lg">{{ course.title }}</h2>
+        <div class="flex -mx-4">
+          <div class="w-8/12 px-4">
+            <div class="border shadow rounded px-6 py-6">
+              <h2 class="font-medium text-2xl mb-2">Over deze cursus</h2>
+
+              <div class="course-content" v-html="course.description"></div>
+
+              <h2 class="font-medium text-2xl mb-2">Wat leer je tijdens deze cursus</h2>
+              <ul>
+                <li class="list-disc list-inside ml-2" v-for="learning_point in course.learning_points" :key="learning_point">{{ learning_point }}</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="w-4/12 px-4">
+            <div class="pb-4">
+              <h2 class="font-medium text-lg">Instructeurs</h2>
+
+              <div>
+                <img class="w-10 h-10 rounded-full" src="https://via.placeholder.com/50x50.png">
+              </div>
+            </div>
+
+            <div class="border shadow rounded px-3 py-2">
+              <h2 class="font-medium text-lg">Omschrijving</h2>
+
+              <ul>
+                <li></li>
+              </ul>
+            </div>
+          </div>
         </div>
 
       </div>
