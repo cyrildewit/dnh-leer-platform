@@ -1,6 +1,7 @@
 <?php
 
 use App\Api\Course\Controllers\CourseController;
+use App\Api\Course\Controllers\ChapterController;
 use App\Api\Topic\Controllers\TopicController;
 use App\Api\User\Controllers\LoginController;
 use App\Api\User\Controllers\UserController;
@@ -20,6 +21,11 @@ Route::prefix('v1')->group(function () {
         Route::get('/{id}', [CourseController::class, 'show']);
         Route::get('/getBySlug/{slug}', [CourseController::class, 'getBySlug']);
         Route::post('/{id}/enroll', [CourseController::class, 'enrollCourse'])->middleware('auth:api');
+    });
+
+    Route::prefix('chapters')->group(function () {
+        Route::get('/{id}', [ChapterController::class, 'show']);
+        Route::get('/getBySlug/{slug}', [ChapterController::class, 'getBySlug']);
     });
 
     Route::prefix('topics')->group(function () {

@@ -92,9 +92,6 @@ export default {
   },
 
   methods: {
-    enroll() {
-      // this.$axios.post('http://dnh-leer-platform.test/api/v1/courses/'+ this.course.id +'/enroll')
-    },
   },
 
   mounted() {
@@ -102,7 +99,7 @@ export default {
     this.$store.dispatch('courses/fetchCourse', this.$route.params.id)
       .then(() => {
 
-        this.$store.dispatch('courses/fetchChapter', this.$route.params.id)
+        this.$store.dispatch('chapters/fetchChapterBySlug', this.$route.params.slug)
       });
   },
 }

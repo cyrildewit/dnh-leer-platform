@@ -36,4 +36,14 @@ export const actions = {
       commit(REMOVE_CURRENT_CHAPTER)
     }
   },
+
+  async fetchChapterBySlug({ commit }, slug) {
+    try {
+      const { data } = await axios.get('http://dnh-leer-platform.test/api/v1/chapters/getBySlug/' + slug)
+
+      commit(SET_CURRENT_CHAPTER, { chapter: data.data })
+    } catch (e) {
+      commit(REMOVE_CURRENT_CHAPTER)
+    }
+  },
 }
