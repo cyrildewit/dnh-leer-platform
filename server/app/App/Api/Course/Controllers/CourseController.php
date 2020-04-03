@@ -31,6 +31,26 @@ final class CourseController extends Controller
         return new CourseResource($course);
     }
 
+    protected function show(Request $request, $id)
+    {
+        $course = Course::query()
+            ->where('id', $id)
+            ->with([
+                'topic',
+                'authors',
+                'tags',
+                'chapters',
+                'chapters.sections'
+            ])
+            ->first();
+
+        if ($course === null) {
+            throw new ModelNotFoundException();
+        }
+
+        return new CourseResource($course);
+    }
+
     public function enrollCourse(Request $request, $course)
     {
         // $course = Course::findOrFail($course);
@@ -40,20 +60,4 @@ final class CourseController extends Controller
             'user_id' => Auth::guard('api')->user()->id,
         ]);
     }
-
-    // public function enrollCourse($course_slug)
-    // {
-    //     if (Auth::check()) {
-    //         $enrolled_course = $this->courseRepository->findBySlug($course_slug);
-
-    //         $new_enrollment = new CourseEnrollment();
-    //         $new_enrollment->course_id = $enrolled_course->id;
-    //         $new_enrollment->user_id = Auth::id();
-    //         $new_enrollment->save();
-
-    //         event(new EnrollCourse($enrolled_course, Auth::user()));
-    //     }
-
-    //     return redirect()->back();
-    // }
 }

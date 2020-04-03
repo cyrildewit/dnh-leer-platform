@@ -13,7 +13,7 @@
             <div class="ml-4 flex items-center">
               <div>
                 <h1 class="text-2xl mb-2">{{ course.title }}</h1>
-                <p class="text-base">{{ course.headline }}</p>
+                <p class="text-base"><span v-html="course.headline"></span></p>
               </div>
             </div>
           </div>
@@ -122,7 +122,9 @@ export default {
 
   methods: {
     enroll() {
-      this.$axios.post('http://dnh-leer-platform.test/api/v1/courses/'+ this.course.id +'/enroll')
+      this.$axios.post('http://dnh-leer-platform.test/api/v1/courses/'+ this.course.id +'/enroll').then(() => {
+        this.$router.push(this.localePath({ name: 'my-courses-id', params: { id: this.course.id } }));
+      })
     },
   },
 
