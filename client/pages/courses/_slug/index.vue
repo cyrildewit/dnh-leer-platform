@@ -52,29 +52,29 @@
           </div>
 
           <div class="w-4/12 px-4">
-            <div class="pb-4">
+            <div class="mb-4">
               <h2 class="font-medium text-lg mb-2">Instructeurs</h2>
 
-              <div v-for="author in course.authors" :key="author.id" class="flex items-center border rounded shadow p-2">
+              <div v-for="author in course.authors" :key="author.id" class="flex items-center border rounded shadow p-3">
                 <img class="w-10 h-10 rounded-full" src="https://via.placeholder.com/50x50.png">
                 <h4 class="ml-2 font-medium">{{ author.name }}</h4>
               </div>
             </div>
 
-            <div class="border shadow rounded px-3 py-2">
-              <h2 class="font-medium text-lg">Omschrijving</h2>
+            <div class="mb-4">
+              <h2 class="font-medium text-lg mb-2">Details</h2>
 
-              <ul>
+              <ul class="border shadow rounded p-3">
                 <li><strong class="text-gray-700">Niveau:</strong> {{ course.level }}</li>
                 <li><strong class="text-gray-700">Studieduur: </strong> {{ course.estimated_duration }} uur</li>
                 <li><strong class="text-gray-700">Taal:</strong> {{ course.language }}</li>
                 <li><strong class="text-gray-700">Onderwerp:</strong> {{ course.topic.display_name }}</li>
-                <li><strong class="text-gray-700">Unieke weergaven:</strong> {{ course.unique_views_count }} x bekeken</li>
+                <li><strong class="text-gray-700">Unieke weergaven:</strong> {{ course.unique_views_count + 1 }}x bekeken</li>
               </ul>
             </div>
 
-            <div class="flex mt-4">
-              <a class="border rounded px-3 py-1 text-sm" v-for="tag in course.tags" :key="tag.id">{{ tag. }}</a>
+            <div class="flex">
+              <a class="border rounded px-3 py-1 text-sm" v-for="tag in course.tags" :key="tag.id">{{ tag.name.en }}</a>
             </div>
           </div>
         </div>

@@ -20,7 +20,7 @@ final class CourseController extends Controller
 
     protected function getBySlug(Request $request, $slug)
     {
-        $course = Course::where('slug', $slug)->with(['topic', 'authors'])->first();
+        $course = Course::where('slug', $slug)->with(['topic', 'authors', 'tags'])->first();
 
         if ($course === null) {
             throw new ModelNotFoundException();
