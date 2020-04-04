@@ -4,6 +4,7 @@ use App\Api\Course\Controllers\CourseController;
 use App\Api\Course\Controllers\ChapterController;
 use App\Api\Topic\Controllers\TopicController;
 use App\Api\User\Controllers\LoginController;
+use App\Api\User\Controllers\RegisterController;
 use App\Api\User\Controllers\UserController;
 use App\Api\View\Controllers\ViewController;
 use Illuminate\Support\Facades\Route;
@@ -12,7 +13,7 @@ Route::prefix('v1')->group(function () {
     Route::prefix('auth')->group(function () {
         Route::post('login', [LoginController::class, 'login']);
         Route::post('logout', [LoginController::class, 'logout'])->middleware('auth:api');
-        // Route::post('register', 'RegisterController@register');
+        Route::post('register', [RegisterController::class, 'register']);
         Route::get('user', [UserController::class, 'authenticated'])->middleware('auth:api');
     });
 
