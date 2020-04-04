@@ -2,14 +2,13 @@
 
 namespace App\Api\User\Controllers;
 
+use App\Api\User\Resources\User as UserResource;
+use Domain\User\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Validation\ValidationException;
 use Illuminate\Support\Facades\Validator;
 use Support\Controller;
-use App\Api\User\Resources\User as UserResource;
-use Domain\User\Models\User;
 
 final class RegisterController extends Controller
 {
@@ -28,9 +27,9 @@ final class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
+            'name'     => ['required', 'string', 'max:255'],
             'username' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'email'    => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'confirmed', 'min:8'],
         ]);
     }
@@ -38,9 +37,9 @@ final class RegisterController extends Controller
     protected function create(array $data)
     {
         $user = User::create([
-            'name' => $data['name'],
+            'name'     => $data['name'],
             'username' => $data['username'],
-            'email' => $data['email'],
+            'email'    => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
 
