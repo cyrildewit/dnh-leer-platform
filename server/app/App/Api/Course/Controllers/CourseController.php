@@ -8,8 +8,8 @@ use Domain\Course\Models\Course;
 use Domain\Course\Models\Enrollment;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
-use Support\Controller;
 use Illuminate\Support\Facades\Auth;
+use Support\Controller;
 
 final class CourseController extends Controller
 {
@@ -40,7 +40,7 @@ final class CourseController extends Controller
                 'authors',
                 'tags',
                 'chapters',
-                'chapters.sections'
+                'chapters.sections',
             ])
             ->first();
 
@@ -57,7 +57,7 @@ final class CourseController extends Controller
 
         return Enrollment::create([
             'course_id' => $course,
-            'user_id' => Auth::guard('api')->user()->id,
+            'user_id'   => Auth::guard('api')->user()->id,
         ]);
     }
 }

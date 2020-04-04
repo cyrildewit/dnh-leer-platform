@@ -2,14 +2,10 @@
 
 namespace App\Api\Course\Controllers;
 
-use App\Api\Course\Resources\Course as CourseResource;
-use App\Api\Course\Resources\CourseCollection;
 use Domain\Course\Models\Chapter;
-use Domain\Course\Models\Enrollment;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 use Support\Controller;
-use Illuminate\Support\Facades\Auth;
 
 final class ChapterController extends Controller
 {
@@ -19,7 +15,7 @@ final class ChapterController extends Controller
             ->where('id', $id)
             ->with([
                 'course',
-                'sections'
+                'sections',
             ])
             ->first();
 
@@ -36,7 +32,7 @@ final class ChapterController extends Controller
             ->where('slug', $slug)
             ->with([
                 'course',
-                'sections'
+                'sections',
             ])
             ->first();
 

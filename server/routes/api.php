@@ -1,7 +1,7 @@
 <?php
 
-use App\Api\Course\Controllers\CourseController;
 use App\Api\Course\Controllers\ChapterController;
+use App\Api\Course\Controllers\CourseController;
 use App\Api\Topic\Controllers\TopicController;
 use App\Api\User\Controllers\LoginController;
 use App\Api\User\Controllers\RegisterController;
