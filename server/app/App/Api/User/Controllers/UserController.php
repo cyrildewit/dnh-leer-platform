@@ -9,11 +9,6 @@ use Illuminate\Support\Facades\Auth;
 
 final class UserController
 {
-    public function authenticated()
-    {
-        return new UserResource($this->guard()->user());
-    }
-
     public function update(UserUpdateRequest $request, User $user)
     {
         $user->update($request->validated());

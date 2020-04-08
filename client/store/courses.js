@@ -109,7 +109,12 @@ export const actions = {
 
   async fetchCoursesByTopic({ commit }, topicSlug) {
     try {
-      const { data } = await axios.get('http://dnh-leer-platform.test/api/v1/topics/getBySlug/'+topicSlug + '/courses')
+      const { data } = await axios.get('http://dnh-leer-platform.test/api/v1/topics', {
+        params: {
+          'filter[slug]': topicSlug,
+          'include': 'courses',
+        },
+      })
 
       commit(SET_TOPIC_COURSES, { courses: data.data })
     } catch (e) {
