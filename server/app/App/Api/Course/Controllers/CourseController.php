@@ -12,10 +12,9 @@ use Illuminate\Support\Facades\Auth;
 use Support\Controller;
 use Spatie\QueryBuilder\QueryBuilder;
 use Spatie\QueryBuilder\AllowedFilter;
-
 final class CourseController extends Controller
 {
-    protected function index(Request $request)
+    protected function index()
     {
         $courses = QueryBuilder::for(Course::class)
             ->allowedFilters([
@@ -29,25 +28,28 @@ final class CourseController extends Controller
             ->allowedIncludes([
                 'topic',
                 'chapters',
-                'authors'
+                'chapters.sections',
+                'authors',
+                'tags',
             ])
             ->get();
 
         return new CourseCollection($courses);
     }
 
-    protected function show(Request $request, $id)
+    protected function show($id)
     {
-        $course = Course::query()
-            ->where('id', $id)
-            ->with([
+        $course = QueryBuilder::for(Course::class)
+            ->allowedIncludes([
                 'topic',
-                'authors',
-                'tags',
                 'chapters',
                 'chapters.sections',
+                'authors',
+                'tags',
             ])
+            ->where('id', $id)
             ->first();
+
 
         if ($course === null) {
             throw new ModelNotFoundException();
