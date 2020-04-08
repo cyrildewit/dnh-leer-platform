@@ -23,12 +23,6 @@ class Course extends Model implements Viewable
         'target_audience' => 'array',
     ];
 
-    public function authors()//: BelongsToMany
-    {
-        return $this->belongsToMany(User::class, 'course_author', 'course_id', 'user_id');
-        // ->withTimestamps();
-    }
-
     public function topic()
     {
         return $this->belongsTo(Topic::class);
@@ -37,6 +31,12 @@ class Course extends Model implements Viewable
     public function chapters()
     {
         return $this->belongsToMany(Chapter::class, 'course_chapter', 'course_id', 'chapter_id');
+    }
+
+    public function authors()//: BelongsToMany
+    {
+        return $this->belongsToMany(User::class, 'course_author', 'course_id', 'user_id');
+        // ->withTimestamps();
     }
 
     public function getUniqueViewsCount()

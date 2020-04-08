@@ -23,7 +23,7 @@ class Topic extends JsonResource
             'description'        => $this->description,
             'status'             => $this->status,
             'unique_views_count' => $this->getUniqueViewsCount(),
-            'courses'            => new CourseCollection($this->courses),
+            'courses'            => new CourseCollection($this->whenLoaded('courses')),
         ];
     }
 }

@@ -91,11 +91,19 @@ export const actions = {
 
   async fetchCourseBySlug({ commit }, slug) {
     try {
-      const { data } = await axios.get('http://dnh-leer-platform.test/api/v1/courses/getBySlug/' + slug)
+      const { data } = await axios.get('http://dnh-leer-platform.test/api/v1/courses', {
+        params: {
+          'filter[slug]': slug,
+          'include': ['topic', 'chapters', 'authors'],
+        },
+      })
 
-      commit(SET_CURRENT_COURSE, { course: data.data })
+      if (data.data.length > 0) {
+        commit(SET_CURRENT_COURSE, { course: data.data[0] })
+      }
+
     } catch (e) {
-      commit(REMOVE_CURRENT_COURSE)
+      // commit(REMOVE_CURRENT_COURSE)
     }
   },
 
