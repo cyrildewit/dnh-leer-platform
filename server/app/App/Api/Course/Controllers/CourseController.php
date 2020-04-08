@@ -9,9 +9,10 @@ use Domain\Course\Models\Enrollment;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Support\Controller;
-use Spatie\QueryBuilder\QueryBuilder;
 use Spatie\QueryBuilder\AllowedFilter;
+use Spatie\QueryBuilder\QueryBuilder;
+use Support\Controller;
+
 final class CourseController extends Controller
 {
     protected function index()
@@ -49,7 +50,6 @@ final class CourseController extends Controller
             ])
             ->where('id', $id)
             ->first();
-
 
         if ($course === null) {
             throw new ModelNotFoundException();
