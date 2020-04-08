@@ -58,12 +58,10 @@ final class CourseController extends Controller
         return new CourseResource($course);
     }
 
-    public function enrollCourse(Request $request, $course)
+    public function enroll($id)
     {
-        // $course = Course::findOrFail($course);
-
         return Enrollment::create([
-            'course_id' => $course,
+            'course_id' => $id,
             'user_id'   => Auth::guard('api')->user()->id,
         ]);
     }
