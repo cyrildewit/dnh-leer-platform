@@ -12,6 +12,7 @@
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.0",
         "spatie/laravel-medialibrary": "^8.0.0",
+        "spatie/laravel-query-builder": "^2.8",
         "spatie/laravel-tags": "^2.6",
         "tymon/jwt-auth": "^1.0.0"
     },
