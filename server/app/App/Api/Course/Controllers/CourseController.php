@@ -10,12 +10,28 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Support\Controller;
+use Spatie\QueryBuilder\QueryBuilder;
+use Spatie\QueryBuilder\AllowedFilter;
 
 final class CourseController extends Controller
 {
     protected function index(Request $request)
     {
-        $courses = Course::all();
+        $courses = QueryBuilder::for(Course::class)
+            ->allowedFilters([
+                AllowedFilter::exact('id'),
+                AllowedFilter::exact('slug'),
+                'title',
+                'headline',
+                'description',
+                'description_excerpt',
+            ])
+            ->allowedIncludes([
+                'topic',
+                'chapters',
+                'authors'
+            ])
+            ->get();
 
         return new CourseCollection($courses);
     }
