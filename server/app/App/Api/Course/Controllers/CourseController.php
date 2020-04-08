@@ -36,17 +36,6 @@ final class CourseController extends Controller
         return new CourseCollection($courses);
     }
 
-    protected function getBySlug(Request $request, $slug)
-    {
-        $course = Course::where('slug', $slug)->with(['topic', 'authors', 'tags', 'chapters', 'chapters.sections'])->first();
-
-        if ($course === null) {
-            throw new ModelNotFoundException();
-        }
-
-        return new CourseResource($course);
-    }
-
     protected function show(Request $request, $id)
     {
         $course = Course::query()
