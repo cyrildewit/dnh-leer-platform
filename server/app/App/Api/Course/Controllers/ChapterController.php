@@ -34,11 +34,11 @@ final class ChapterController extends Controller
     protected function show($id)
     {
         $chapter = QueryBuilder::for(Chapter::class)
-            ->where('id', $id)
-            ->with([
+            ->allowedIncludes([
                 'course',
                 'sections',
             ])
+            ->where('id', $id)
             ->first();
 
         if ($chapter === null) {
