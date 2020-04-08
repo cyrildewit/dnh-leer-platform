@@ -24,8 +24,8 @@ Route::prefix('v1')->group(function () {
     });
 
     Route::prefix('chapters')->group(function () {
+        Route::get('/', [ChapterController::class, 'index']);
         Route::get('/{id}', [ChapterController::class, 'show']);
-        Route::get('/getBySlug/{slug}', [ChapterController::class, 'getBySlug']);
     });
 
     Route::prefix('topics')->group(function () {

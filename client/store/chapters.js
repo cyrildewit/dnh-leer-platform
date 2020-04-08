@@ -29,7 +29,11 @@ export const mutations = {
 export const actions = {
   async fetchChapter({ commit }, id) {
     try {
-      const { data } = await axios.get('http://dnh-leer-platform.test/api/v1/chapters/' + id)
+      const { data } = await axios.get('http://dnh-leer-platform.test/api/v1/chapters/' + id, {
+        params: {
+          'include': ['chapters', 'sections'],
+        },
+      })
 
       commit(SET_CURRENT_CHAPTER, { chapter: data })
     } catch (e) {
@@ -39,7 +43,11 @@ export const actions = {
 
   async fetchChapterBySlug({ commit }, slug) {
     try {
-      const { data } = await axios.get('http://dnh-leer-platform.test/api/v1/chapters/getBySlug/' + slug)
+      const { data } = await axios.get('http://dnh-leer-platform.test/api/v1/chapters', {
+        params: {
+          'filter[slug]': slug,
+        },
+      })
 
       commit(SET_CURRENT_CHAPTER, { chapter: data })
     } catch (e) {

@@ -5,13 +5,35 @@ namespace App\Api\Course\Controllers;
 use Domain\Course\Models\Chapter;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
+use App\Api\Course\Resources\Chapter as ChapterResource;
+use App\Api\Course\Resources\ChapterCollection;
+use Spatie\QueryBuilder\AllowedFilter;
+use Spatie\QueryBuilder\QueryBuilder;
 use Support\Controller;
 
 final class ChapterController extends Controller
 {
-    protected function show(Request $request, $id)
+    protected function index()
     {
-        $chapter = Chapter::query()
+        $chapters = QueryBuilder::for(Chapter::class)
+            ->allowedFilters([
+                AllowedFilter::exact('id'),
+                AllowedFilter::exact('slug'),
+                'title',
+                'description',
+            ])
+            ->allowedIncludes([
+                'course',
+                'sections',
+            ])
+            ->get();
+
+        return new ChapterCollection($chapters);
+    }
+
+    protected function show($id)
+    {
+        $chapter = QueryBuilder::for(Chapter::class)
             ->where('id', $id)
             ->with([
                 'course',
@@ -23,23 +45,6 @@ final class ChapterController extends Controller
             throw new ModelNotFoundException();
         }
 
-        return $chapter;
-    }
-
-    protected function getBySlug(Request $request, $slug)
-    {
-        $chapter = Chapter::query()
-            ->where('slug', $slug)
-            ->with([
-                'course',
-                'sections',
-            ])
-            ->first();
-
-        if ($chapter === null) {
-            throw new ModelNotFoundException();
-        }
-
-        return $chapter;
+        return new ChapterResource($chapter);
     }
 }
