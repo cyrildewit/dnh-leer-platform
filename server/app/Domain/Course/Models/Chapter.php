@@ -8,7 +8,7 @@ class Chapter extends Model
 {
     public function course()
     {
-        return $this->belongsTo(Course::class, 'course_chapter', 'course_id', 'chapter_id');
+        return $this->belongsTo(Course::class, 'course_id');
     }
 
     public function sections()
